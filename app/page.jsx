@@ -14,7 +14,7 @@ const Home = () => {
           alt="a picture of me"
         />
       </div>
-      <div className="fixed top-0 left-0 flex flex-col items-center justify-center w-screen h-screen text-white">
+      <div className="fixed top-0 left-0 flex flex-col -z-10 items-center justify-center w-screen h-screen text-white">
         <motion.div
           initial={{ x: "-100vw" }}
           animate={{ x: "0" }}
