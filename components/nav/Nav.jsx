@@ -28,7 +28,6 @@ const Nav = () => {
   return (
     <nav className="fixed left-0 top-0 flex items-center z-[1] justify-between w-screen h-20 m-0 px-10 max-sm:px-[25px]">
       <Link href="/">© Madjour amir</Link>
-      {/* Desktop Navigation */}
 
       {/* inline navigation */}
       {/* <div className="sm:flex hidden">
@@ -42,7 +41,7 @@ const Nav = () => {
   </div> */}
 
       {/* side navigation */}
-      <div className="max-sm:hidden flex relative">
+      <div className="flex relative">
         <div className="flex">
           <button
             onClick={() => {
@@ -60,7 +59,7 @@ const Nav = () => {
                 animate="enter"
                 exit="exit"
                 className={clsx(
-                  "fixed top-0 right-0 h-screen w-[400px] bg-text",
+                  "fixed top-0 right-0 h-screen sm:w-[400px] max-sm:w-screen bg-text",
                   "flex flex-col items-center justify-center px-4 gap-14 text-left ",
                   "text-5xl *:w-40 text-background"
                 )}
@@ -81,65 +80,6 @@ const Nav = () => {
                 >
                   Contact
                 </DelayedLink>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <div className="sm:hidden flex relative">
-        <div className="flex">
-          <button
-            onClick={() => {
-              setToggleSideMenu((prev) => !prev);
-            }}
-            className="flex w-6 h-6 items-center justify-center z-10"
-          >
-            {toggleSideMenu ? <CancelSVG /> : <HamburgerSVG color="white" />}
-          </button>
-          <AnimatePresence>
-            {toggleSideMenu && (
-              <motion.div
-                variants={navSlide}
-                initial="initial"
-                animate="enter"
-                exit="exit"
-                className={clsx(
-                  "fixed top-0 left-0 h-screen w-screen bg-text",
-                  "flex flex-col items-center justify-center px-4 gap-14 text-left ",
-                  "text-5xl *:w-40 text-background"
-                )}
-              >
-                <Curve />
-                <Link
-                  href="/"
-                  className=""
-                  onClick={() => setToggleSideMenu(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/work"
-                  className=""
-                  onClick={() => setToggleSideMenu(false)}
-                >
-                  Work
-                </Link>
-                <Link
-                  href="/about"
-                  className=""
-                  onClick={() => setToggleSideMenu(false)}
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className=""
-                  onClick={() => setToggleSideMenu(false)}
-                >
-                  Contact
-                </Link>
               </motion.div>
             )}
           </AnimatePresence>
