@@ -1,18 +1,21 @@
+"use client";
 import Nav from "@/components/nav/Nav";
+import Curve from "@/components/page/Curve";
 import "@/styles/global.css";
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import usePageTransition from "@/zustand/pageTransition";
 
-export const metadata = {
-  title: "MadjourAmir",
-  description: "Madjour amir portfolio",
-};
 const RootLayout = ({ children }) => {
+  const { isTransitioning } = usePageTransition();
+  const pathname = usePathname();
   return (
     <html lang="en">
       <body>
-        <main className="relative flex flex-col justify-start items-center max-w-[1100px] mx-auto sm:px-[25px] px-6 ">
-          <Nav />
-          {children}
-        </main>
+        <Nav />
+        <AnimatePresence mode="wait">
+          <Curve key={isTransitioning}>{children}</Curve>
+        </AnimatePresence>
       </body>
     </html>
   );

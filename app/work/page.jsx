@@ -1,6 +1,9 @@
-
 const Work = () => {
-  return <div>Work</div>;
+  return (
+      <div className="w-screen h-screen flex items-center justify-center">
+        Work
+      </div>
+  );
 };
 
 export default Work;

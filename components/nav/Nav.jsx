@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import clsx from "clsx";
 import CancelSVG from "@/public/SVG/CancelSVG";
+import DelayedLink from "./DelayedLink";
 import Curve from "./Curve";
 
 const Nav = () => {
@@ -25,10 +26,8 @@ const Nav = () => {
     },
   };
   return (
-    <nav className="fixed left-0 top-0 flex items-center justify-between w-screen h-20 m-0 px-10 max-sm:px-[25px]">
-      <Link href="/" className="flex gap-2 flex-center">
-        <p className="">© Madjour amir</p>
-      </Link>
+    <nav className="fixed left-0 top-0 flex items-center z-[1] justify-between w-screen h-20 m-0 px-10 max-sm:px-[25px]">
+      <Link href="/">© Madjour amir</Link>
       {/* Desktop Navigation */}
 
       {/* inline navigation */}
@@ -67,34 +66,21 @@ const Nav = () => {
                 )}
               >
                 <Curve />
-                <Link
-                  href="/"
-                  className=""
-                  onClick={() => setToggleSideMenu(false)}
-                >
+                <DelayedLink href="/" fn={() => setToggleSideMenu(false)}>
                   Home
-                </Link>
-                <Link
-                  href="/work"
-                  className=""
-                  onClick={() => setToggleSideMenu(false)}
-                >
+                </DelayedLink>
+                <DelayedLink href="/work" fn={() => setToggleSideMenu(false)}>
                   Work
-                </Link>
-                <Link
-                  href="/about"
-                  className=""
-                  onClick={() => setToggleSideMenu(false)}
-                >
+                </DelayedLink>
+                <DelayedLink href="/about" fn={() => setToggleSideMenu(false)}>
                   About
-                </Link>
-                <Link
+                </DelayedLink>
+                <DelayedLink
                   href="/contact"
-                  className=""
-                  onClick={() => setToggleSideMenu(false)}
+                  fn={() => setToggleSideMenu(false)}
                 >
                   Contact
-                </Link>
+                </DelayedLink>
               </motion.div>
             )}
           </AnimatePresence>
