@@ -1,26 +1,27 @@
 const HamburgerSVG = ({ color }) => {
   return (
     <svg
-      width="44"
-      height="44"
-      viewBox="0 0 44 44"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
       fill="none"
-      className={color === "white" ? "stroke-white" : "stroke-[#1E1E1E]"}
+      className="*:stroke-background"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M7.33374 12.8333H12.8337M36.6671 12.8333H20.1671"
-        strokeWidth="2.75"
+        d="M4.00024 6.99997H7.00024M20.0002 6.99997H11.0002"
+        stroke=""
+        strokeWidth="1.5"
         strokeLinecap="round"
       />
       <path
-        d="M36.6671 31.1667H31.1671M7.33374 31.1667H23.8337"
-        strokeWidth="2.75"
+        d="M20.0002 17H17.0002M4.00024 17H13.0002"
+        strokeWidth="1.5"
         strokeLinecap="round"
       />
       <path
-        d="M7.33374 22H12.8337H36.6671"
-        strokeWidth="2.75"
+        d="M4.00024 12H7.00024H20.0002"
+        strokeWidth="1.5"
         strokeLinecap="round"
       />
     </svg>
