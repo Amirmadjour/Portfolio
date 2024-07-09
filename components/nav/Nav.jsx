@@ -8,9 +8,11 @@ import clsx from "clsx";
 import CancelSVG from "@/public/SVG/CancelSVG";
 import DelayedLink from "./DelayedLink";
 import Curve from "./Curve";
+import usePageTransition from "@/zustand/pageTransition";
 
 const Nav = () => {
   const [toggleSideMenu, setToggleSideMenu] = useState(false);
+  const { toggleToTransition, setRoutePath } = usePageTransition();
 
   const navSlide = {
     initial: {
@@ -26,8 +28,8 @@ const Nav = () => {
     },
   };
   return (
-    <nav className="fixed left-0 top-0 flex items-center z-[1] justify-between w-screen h-20 m-0 px-10 max-sm:px-[25px]">
-      <Link href="/">© Madjour amir</Link>
+    <nav className="fixed left-0 top-0 flex items-center justify-between w-screen h-20 m-0 px-10 max-sm:px-[25px]">
+      <DelayedLink href="/">© Madjour amir</DelayedLink>
 
       {/* inline navigation */}
       {/* <div className="sm:flex hidden">
@@ -44,10 +46,10 @@ const Nav = () => {
       <div className="flex relative">
         <div className="flex">
           <button
+            className="flex items-center justify-center bg-primary w-14 z-10 aspect-square rounded-full"
             onClick={() => {
               setToggleSideMenu((prev) => !prev);
             }}
-            className="flex w-6 h-6 items-center justify-center z-10"
           >
             {toggleSideMenu ? <CancelSVG /> : <HamburgerSVG color="white" />}
           </button>

@@ -24,6 +24,7 @@ export default function DelayedLink({ fn, href, children, delay = 1000 }) {
     setIsPending(true);
     setTimeout(() => {
       router.push(href);
+      setIsPending(false);
     }, delay); // delay in milliseconds
   };
 

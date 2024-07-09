@@ -2,20 +2,20 @@
 import Nav from "@/components/nav/Nav";
 import Curve from "@/components/page/Curve";
 import "@/styles/global.css";
-import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { AnimatePresence } from "framer-motion";
 import usePageTransition from "@/zustand/pageTransition";
 
 const RootLayout = ({ children }) => {
   const { isTransitioning } = usePageTransition();
-  const pathname = usePathname();
   return (
     <html lang="en">
       <body>
-        <Nav />
-        <AnimatePresence mode="wait">
-          <Curve key={isTransitioning}>{children}</Curve>
-        </AnimatePresence>
+        <div className="flex flex-col h-fit w-fit overflow-auto">
+          <Nav />
+          <AnimatePresence mode="wait">
+            <Curve key={isTransitioning}>{children}</Curve>
+          </AnimatePresence>
+        </div>
       </body>
     </html>
   );
