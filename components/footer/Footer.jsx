@@ -50,7 +50,7 @@ const Footer = () => {
           "max-md:text-[60px] max-md:text-center max-lg:justify-center max-lg:flex-col md:gap-10 lg:gap-[60px]"
         )}
       >
-        <div className="flex flex-col w-full h-fit gap-10 items-center">
+        <div className="flex flex-col w-full md:w-fit h-fit gap-10 items-center">
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-start gap-6">
               <Image

@@ -7,7 +7,7 @@ import clsx from "clsx";
 const projects = [
   {
     title: "Madjria",
-    src: "c2montreal.png",
+    src: "madjria1.png",
     role: "Full stack development",
     href: "/about/madjria",
     transitionName: "Madjria",
@@ -15,7 +15,7 @@ const projects = [
   },
   {
     title: "Majlis",
-    src: "officestudio.png",
+    src: "madjria2.png",
     role: "fontend development",
     href: "/about/majlis",
     transitionName: "Majlis",
@@ -23,7 +23,7 @@ const projects = [
   },
   {
     title: "Locomotive",
-    src: "locomotive.png",
+    src: "majlis1.png",
     role: "fontend dev",
     href: "/about/madjria",
     transitionName: "Madjria",
@@ -31,7 +31,7 @@ const projects = [
   },
   {
     title: "Silencio",
-    src: "silencio.png",
+    src: "majlis2.png",
     role: "fontend dev",
     href: "/about/madjria",
     transitionName: "Madjria",
@@ -49,7 +49,7 @@ const ProjectSection = () => {
           "sm:px-10 md:px-0"
         )}
       >
-        <h3 className="text-[14px] text-text_light self-start pb-5 lg:pb-10">
+        <h3 className="text-[14px] text-text_light self-start pb-5 lg:pb-10 md:px-[50px]">
           Recent work
         </h3>
         {projects.map((project, index) => {
@@ -59,6 +59,7 @@ const ProjectSection = () => {
               title={project.title}
               role={project.role}
               src={project.src}
+              color={project.color}
               setModal={setModal}
               href={project.href}
               transitionName={project.transitionName}

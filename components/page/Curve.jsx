@@ -14,7 +14,7 @@ const anim = (variants) => {
   };
 };
 
-export default function Curve({ children, backgroundColor }) {
+export default function Curve({ children }) {
   const { routePath } = usePageTransition();
   const [dimensions, setDimensions] = useState({
     width: null,
@@ -40,17 +40,17 @@ export default function Curve({ children, backgroundColor }) {
       {!dimensions.width && (
         <div
           className={clsx(
-            "bg-black transition-opacity z-10 duration-100 ease-linear",
+            "bg-text transition-opacity z-10 duration-100 ease-linear",
             "fixed h-screen w-screen pointer-events-none opacity-100 left-0 top-0"
           )}
         />
       )}
-      <motion.p
-        className="fixed left-1/2 text-white top-1/2 -translate-y-1/2 text-5xl -translate-x-1/2 text-center z-20"
-        {...anim(text)}
-      >
-        {routePath}
-      </motion.p>
+        <motion.p
+          className="fixed left-1/2 text-white top-1/2 -translate-y-1/2 text-5xl -translate-x-1/2 text-center z-20"
+          {...anim(text)}
+        >
+          {routePath}
+        </motion.p>
       {dimensions.width != null && <SVG {...dimensions} />}
       {children}
     </>
@@ -78,7 +78,7 @@ const SVG = ({ height, width }) => {
     <motion.svg
       {...anim(translate)}
       className={
-        "fixed h-[calc(100vh+600px)] z-10 w-screen pointer-events-none left-0 top-0"
+        "fill-text fixed h-[calc(100vh+600px)] z-10 w-screen pointer-events-none left-0 top-0"
       }
     >
       <motion.path {...anim(curve(initialPath, targetPath))} />

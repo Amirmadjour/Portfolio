@@ -8,6 +8,7 @@ export default function Project({
   title,
   src,
   role,
+  color,
   href,
   transitionName,
   setModal,
@@ -28,16 +29,18 @@ export default function Project({
         "max-md:flex-col max-md:px-0 max-md:py-5 max-lg:gap-5 "
       )}
     >
-      <Image
-        className={clsx(
-          "h-auto w-full aspect-square bg-text_light",
-          "md:hidden"
-        )}
-        src={`/images/${src}`}
-        width={0}
-        height={0}
-        alt="image"
-      />
+      <div
+        className={clsx("h-auto w-full aspect-square", "md:hidden ")}
+        style={{ backgroundColor: color }}
+      >
+        <Image
+          className="h-auto w-full aspect-square object-contain"
+          src={`/images/${src}`}
+          width={300}
+          height={0}
+          alt="image"
+        />
+      </div>
       <div className={clsx("flex items-center justify-between w-full h-fit")}>
         <h2
           className={clsx(
