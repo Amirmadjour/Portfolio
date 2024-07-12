@@ -57,7 +57,7 @@ const Footer = () => {
                 width={80}
                 className="rounded-full aspect-square h-20 object-cover"
               ></Image>
-              <p>Let's </p>
+              <p>{"Let's"} </p>
             </div>
             <p>partner up</p>
           </div>
@@ -89,7 +89,10 @@ const Footer = () => {
           </h4>
           <div className="flex items-center justify-between">
             {socials.map(({ label, svg }) => (
-              <div className="flex items-center justify-center gap-3">
+              <div
+                key={label}
+                className="flex items-center justify-center gap-3"
+              >
                 {svg}
                 <h5 className="font-medium">{label}</h5>
               </div>
