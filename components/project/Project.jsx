@@ -1,0 +1,61 @@
+"use client";
+import clsx from "clsx";
+import DelayedLink from "../nav/DelayedLink";
+import Image from "next/image";
+
+export default function Project({
+  index,
+  title,
+  src,
+  role,
+  href,
+  transitionName,
+  setModal,
+}) {
+  return (
+    <DelayedLink
+      onMouseEnter={() => {
+        setModal({ active: true, index });
+      }}
+      onMouseLeave={() => {
+        setModal({ active: false, index });
+      }}
+      href={href}
+      transitionName={transitionName}
+      className={clsx(
+        "flex w-full justify-between items-center px-[50px] py-[100px] cursor-pointer transition-all duration-200",
+        "lg:hover:opacity-50 group border-t border-t-[rgb(201, 201, 201)] last-of-type:border-b last-of-type:border-b-[rgb(201, 201, 201)]",
+        "max-md:flex-col max-md:px-0 max-md:py-5 max-lg:gap-5 "
+      )}
+    >
+      <Image
+        className={clsx(
+          "h-auto w-full aspect-square bg-text_light",
+          "md:hidden"
+        )}
+        src={`/images/${src}`}
+        width={0}
+        height={0}
+        alt="image"
+      />
+      <div className={clsx("flex items-center justify-between w-full h-fit")}>
+        <h2
+          className={clsx(
+            "text-[60px] lg:group-hover:-translate-x-3 leading-none m-0 transition-all duration-[400ms] font-semibold",
+            "text-2xl sm:text-4xl md:text-6xl lg:text-[100px] lg:font-normal"
+          )}
+        >
+          {title}
+        </h2>
+        <p
+          className={clsx(
+            "transition-all lg:group-hover:translate-x-3 duration-[400ms]",
+            "text-lg"
+          )}
+        >
+          {role}
+        </p>
+      </div>
+    </DelayedLink>
+  );
+}

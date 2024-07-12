@@ -11,7 +11,16 @@ const routes = {
   "/contact": "Contact",
 };
 
-export default function DelayedLink({ fn, href, children, delay = 1000 }) {
+export default function DelayedLink({
+  fn,
+  href,
+  children,
+  transitionName,
+  className,
+  onMouseEnter,
+  onMouseLeave,
+  delay = 1000,
+}) {
   const router = useRouter();
   const { toggleToTransition, setRoutePath } = usePageTransition();
   const [isPending, setIsPending] = useState(false);
@@ -19,7 +28,7 @@ export default function DelayedLink({ fn, href, children, delay = 1000 }) {
   const handleClick = async (e) => {
     e.preventDefault();
     if (fn) fn();
-    setRoutePath(routes[href]);
+    setRoutePath(routes[href] || transitionName);
     toggleToTransition();
     setIsPending(true);
     setTimeout(() => {
@@ -31,8 +40,11 @@ export default function DelayedLink({ fn, href, children, delay = 1000 }) {
   return (
     <Link
       href={href}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       onClick={handleClick}
       style={{ pointerEvents: isPending ? "none" : "auto" }}
+      className={className}
     >
       {children}
     </Link>

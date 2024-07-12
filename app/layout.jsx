@@ -9,6 +9,10 @@ const RootLayout = ({ children }) => {
   const { isTransitioning } = usePageTransition();
   return (
     <html lang="en">
+      <head>
+        <title>Madjour Amir</title>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+      </head>
       <body>
         <div className="flex flex-col h-fit w-fit overflow-auto">
           <Nav />

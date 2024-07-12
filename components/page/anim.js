@@ -6,7 +6,7 @@ export const text = {
     opacity: 0,
     top: -100,
     transition: { duration: 0.75, delay: 0.35, ease: [0.76, 0, 0.24, 1] },
-    transitionEnd: { top: "40%" },
+    transitionEnd: { top: "55%" },
   },
   exit: {
     opacity: 1,

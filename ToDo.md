@@ -1,0 +1,1 @@
+- remove the [Home] label that is transparent in the middle of the window
