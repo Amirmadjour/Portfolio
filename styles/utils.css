@@ -8,3 +8,9 @@
     xs:px-8 xs:py-[20px] xs:text-lg md:px-10 md:py-[30px] md:text-xl;
   }
 }
+
+@media (max-width: 450px) {
+  .text_s {
+    font-size: 4vw;
+  }
+}

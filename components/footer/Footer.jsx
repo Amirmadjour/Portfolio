@@ -102,7 +102,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="w-full h-[1px] bg-background_light"></div>
-          <div>
+          <div className="text_s">
             Designed and developed by{" "}
             <span className="font-semibold">Madjour Amir</span>
           </div>

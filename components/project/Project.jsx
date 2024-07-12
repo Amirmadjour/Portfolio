@@ -41,7 +41,7 @@ export default function Project({
       <div className={clsx("flex items-center justify-between w-full h-fit")}>
         <h2
           className={clsx(
-            "text-[60px] lg:group-hover:-translate-x-3 leading-none m-0 transition-all duration-[400ms] font-semibold",
+            "lg:group-hover:-translate-x-3 leading-none m-0 transition-all duration-[400ms] font-semibold",
             "text-[5vw] sm:text-4xl md:text-6xl lg:text-[100px] lg:font-normal"
           )}
         >
