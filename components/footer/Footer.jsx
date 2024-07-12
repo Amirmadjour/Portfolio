@@ -7,6 +7,8 @@ import clsx from "clsx";
 import GithubSVG from "@/public/SVG/GithubSVG";
 import LinkedInSVG from "@/public/SVG/LinkedInSVG";
 
+import "@/styles/utils.css";
+
 const socials = [
   { label: "Github", svg: <GithubSVG /> },
   { label: "LinkedIn", svg: <LinkedInSVG /> },
@@ -38,17 +40,17 @@ const Footer = () => {
   return (
     <div
       className={clsx(
-        "w-screen h-screen flex flex-col justify-center items-center px-20 bg-text text-background",
-        "max-md:px-[25px]"
+        "w-screen min-h-screen h-fit flex flex-col justify-center items-center px-[25px] bg-text text-background",
+        "md:px-20 py-4"
       )}
     >
       <div
         className={clsx(
-          "max-w-[1100px] w-full h-full flex text-[100px] leading-none items-center justify-between gap-[60px]",
-          "max-md:text-[60px] max-md:text-center max-lg:justify-center max-lg:flex-col"
+          "max-w-[1100px] w-full h-full flex text-[100px] leading-none items-center justify-between gap-[3vh]",
+          "max-md:text-[60px] max-md:text-center max-lg:justify-center max-lg:flex-col md:gap-10 lg:gap-[60px]"
         )}
       >
-        <div className="flex flex-col max-md:w-full h-fit gap-10 items-center">
+        <div className="flex flex-col w-full h-fit gap-10 items-center">
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-start gap-6">
               <Image
@@ -56,6 +58,7 @@ const Footer = () => {
                 height={80}
                 width={80}
                 className="rounded-full aspect-square h-20 object-cover"
+                alt=""
               ></Image>
               <p>{"Let's"} </p>
             </div>
@@ -66,7 +69,7 @@ const Footer = () => {
               <button
                 key={text}
                 onClick={() => handleCopy({ text, setCopied })}
-                className="border border-background_light max-md:w-full rounded-full px-10 py-[30px] text-xl"
+                className={clsx("button border-background_light w-full")}
               >
                 {copied ? "copied" : text}
               </button>

@@ -7,6 +7,8 @@ import Footer from "@/components/footer/Footer";
 import ProjectSection from "@/components/project/ProjectSection";
 import clsx from "clsx";
 
+import "@/styles/utils.css";
+
 const Home = () => {
   return (
     <div className="flex flex-col w-full h-fit overflow-y-scroll overflow-x-hidden">
@@ -32,14 +34,14 @@ const Home = () => {
             Madjour Amir -
           </h1>
         </motion.div>
-        <h2 className="text-[40px] leading-none font-medium">
+        <h2 className="text-[9vw] leading-none font-medium md:text-6xl">
           Full stack developer
         </h2>
       </div>
       <div
         className={clsx(
-          "flex flex-col items-center justify-center shrink-0 w-screen h-fit text-text px-20",
-          "max-md:px-[25px]"
+          "flex flex-col items-center justify-center shrink-0 w-screen h-fit text-text px-[25px]",
+          "md:px-20"
         )}
       >
         <div
@@ -48,7 +50,7 @@ const Home = () => {
             "max-lg:flex-col max-lg:px-10 max-md:px-0 max-lg:gap-10 max-md:py-[100px]"
           )}
         >
-          <p className={clsx("w-2/3 text-4xl", "max-lg:w-full max-md:text-lg")}>
+          <p className={clsx("lg:w-2/3 lg:text-4xl", "w-full text-md")}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Accusantium voluptates alias nulla veritatis dignissimos.
             Necessitatibus beatae illum amet tempore voluptate velit magni,
@@ -56,7 +58,7 @@ const Home = () => {
           </p>
           <DelayedLink
             href="/about"
-            className="border border-text_light rounded-full px-10 py-[30px] text-xl"
+            className={clsx("button border-text_light")}
           >
             About me
           </DelayedLink>

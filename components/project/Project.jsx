@@ -42,7 +42,7 @@ export default function Project({
         <h2
           className={clsx(
             "text-[60px] lg:group-hover:-translate-x-3 leading-none m-0 transition-all duration-[400ms] font-semibold",
-            "text-2xl sm:text-4xl md:text-6xl lg:text-[100px] lg:font-normal"
+            "text-[5vw] sm:text-4xl md:text-6xl lg:text-[100px] lg:font-normal"
           )}
         >
           {title}
@@ -50,7 +50,7 @@ export default function Project({
         <p
           className={clsx(
             "transition-all lg:group-hover:translate-x-3 duration-[400ms]",
-            "text-lg"
+            "text-[5vw] xs:text-lg"
           )}
         >
           {role}
