@@ -92,7 +92,11 @@ export default function Modal({ modal, projects }) {
               >
                 <Image
                   className="h-auto"
-                  src={`/images/${src}`}
+                  src={
+                    process.env.NODE_ENV === "producation"
+                      ? `/images/${src}`
+                      : `/Portfolio/images/${src}`
+                  }
                   width={300}
                   height={0}
                   alt="image"
