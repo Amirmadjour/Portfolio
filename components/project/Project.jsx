@@ -36,7 +36,7 @@ export default function Project({
         <Image
           className="h-auto w-full aspect-square object-contain"
           src={
-            process.env.NODE_ENV !== "producation"
+            process.env.NODE_ENV !== "production"
               ? `/images/${src}`
               : `/Portfolio/images/${src}`
           }
