@@ -2,21 +2,74 @@
   {
     "id": "Madjria",
     "name": "Madjria",
-    "content": "Next.js is a React framework for production."
+    "info": [
+      {
+        "label": "ROLE",
+        "desc": "Full stack developer"
+      },
+      {
+        "label": "PURPOSE",
+        "desc": "E-commerce website"
+      },
+      {
+        "label": "YEAR & LOCATION",
+        "desc": "2024 ALGERIA"
+      }
+    ],
+    "link": "https://madjria.com"
   },
   {
     "id": "2",
     "name": "Majlis",
-    "content": "Next.js 14 introduces several new features and improvements."
+    "info": [
+      {
+        "label": "ROLE",
+        "desc": "Frontend developer"
+      },
+      {
+        "label": "PURPOSE",
+        "desc": "Desktop management app"
+      },
+      {
+        "label": "YEAR & LOCATION",
+        "desc": "2024 ALGERIA"
+      }
+    ]
   },
   {
     "id": "3",
     "name": "Locomotive",
-    "content": "Learn about advanced features in Next.js for building robust applications."
+    "info": [
+      {
+        "label": "ROLE",
+        "desc": "Backend developer"
+      },
+      {
+        "label": "PURPOSE",
+        "desc": "Smh website"
+      },
+      {
+        "label": "YEAR & LOCATION",
+        "desc": "2022 ALGERIA"
+      }
+    ]
   },
   {
     "id": "4",
     "name": "Silencio",
-    "content": "Learn about advanced features in Next.js for building robust applications."
+    "info": [
+      {
+        "label": "ROLE",
+        "desc": "Full stack developer"
+      },
+      {
+        "label": "PURPOSE",
+        "desc": "Bla-bla website"
+      },
+      {
+        "label": "YEAR & LOCATION",
+        "desc": "2023 ALGERIA"
+      }
+    ]
   }
 ]
