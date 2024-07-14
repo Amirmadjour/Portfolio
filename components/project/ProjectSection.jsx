@@ -9,7 +9,6 @@ const projects = [
     title: "Madjria",
     src: "madjria1.png",
     role: "Full stack development",
-    href: "/about/madjria",
     transitionName: "Madjria",
     color: "#000000",
   },
@@ -17,7 +16,6 @@ const projects = [
     title: "Majlis",
     src: "madjria2.png",
     role: "fontend development",
-    href: "/about/majlis",
     transitionName: "Majlis",
     color: "#8C8C8C",
   },
@@ -25,7 +23,6 @@ const projects = [
     title: "Locomotive",
     src: "majlis1.png",
     role: "fontend dev",
-    href: "/about/madjria",
     transitionName: "Madjria",
     color: "#EFE8D3",
   },
@@ -33,7 +30,6 @@ const projects = [
     title: "Silencio",
     src: "majlis2.png",
     role: "fontend dev",
-    href: "/about/madjria",
     transitionName: "Madjria",
     color: "#706D63",
   },
@@ -61,7 +57,6 @@ const ProjectSection = () => {
               src={project.src}
               color={project.color}
               setModal={setModal}
-              href={project.href}
               transitionName={project.transitionName}
               key={index}
             />

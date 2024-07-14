@@ -9,7 +9,6 @@ export default function Project({
   src,
   role,
   color,
-  href,
   transitionName,
   setModal,
 }) {
@@ -21,7 +20,7 @@ export default function Project({
       onMouseLeave={() => {
         setModal({ active: false, index });
       }}
-      href={href}
+      href={`/about/${title}`}
       transitionName={transitionName}
       className={clsx(
         "flex w-full justify-between items-center px-20 py-[100px] cursor-pointer transition-all duration-200",
