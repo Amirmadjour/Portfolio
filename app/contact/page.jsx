@@ -87,7 +87,7 @@ const Contact = () => {
               setConfettiIsAppearing(true);
               setTimeout(() => {
                 setConfettiIsAppearing(false);
-              }, 5000);
+              }, 2000);
             }}
           >
             Send it
