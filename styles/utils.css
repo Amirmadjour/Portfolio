@@ -14,3 +14,34 @@
     font-size: 4vw;
   }
 }
+
+.custom_circle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  background-color: white;
+  border-radius: 50%;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.custom_circle:hover::before {
+  width: 10px; /* Adjust the size as needed */
+  height: 10px; /* Adjust the size as needed */
+}
+
+.input_number {
+  counter-increment: formElements;
+}
+
+.input_number::before {
+  content: "0" counter(formElements);
+  padding-top: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--background-light);
+}

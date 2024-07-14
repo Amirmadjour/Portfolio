@@ -45,12 +45,14 @@ export default function Curve({ children }) {
           )}
         />
       )}
-        <motion.p
-          className="fixed left-1/2 text-white top-1/2 -translate-y-1/2 text-5xl -translate-x-1/2 text-center z-20"
-          {...anim(text)}
-        >
-          {routePath}
-        </motion.p>
+      <motion.p
+        className={clsx(
+          "fixed select-none left-1/2 text-white top-1/2 -translate-y-1/2 text-5xl -translate-x-1/2 text-center z-20"
+        )}
+        {...anim(text)}
+      >
+        {routePath}
+      </motion.p>
       {dimensions.width != null && <SVG {...dimensions} />}
       {children}
     </>

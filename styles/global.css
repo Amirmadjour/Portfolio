@@ -11,6 +11,10 @@
     --primary: #8fd322;
     --secondary: #157f4d;
     --accent: #1cab98;
+
+    --padding: clamp(25px, 6vw, 130px);
+    /*100, 80, 40, 34, 32, 24, 20, 16, 14
+    --font-size-sm: clamp();*/
   }
   .dark {
     --text: #ebe9fc;
@@ -19,4 +23,5 @@
     --secondary: #020024;
     --accent: #0600c2;
   }
+  counter-reset: formElements;
 }

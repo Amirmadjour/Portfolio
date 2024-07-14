@@ -24,7 +24,7 @@ export default function Project({
       href={href}
       transitionName={transitionName}
       className={clsx(
-        "flex w-full justify-between items-center px-[50px] py-[100px] cursor-pointer transition-all duration-200",
+        "flex w-full justify-between items-center px-20 py-[100px] cursor-pointer transition-all duration-200",
         "lg:hover:opacity-50 group border-t border-t-[rgb(201, 201, 201)] last-of-type:border-b last-of-type:border-b-[rgb(201, 201, 201)]",
         "max-md:flex-col max-md:px-0 max-md:py-5 max-lg:gap-5 "
       )}

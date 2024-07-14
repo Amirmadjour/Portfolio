@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import HamburgerSVG from "@/public/SVG/HamburgerSVG";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -8,11 +7,11 @@ import clsx from "clsx";
 import CancelSVG from "@/public/SVG/CancelSVG";
 import DelayedLink from "./DelayedLink";
 import Curve from "./Curve";
-import usePageTransition from "@/zustand/pageTransition";
+
+import "@/styles/utils.css";
 
 const Nav = () => {
   const [toggleSideMenu, setToggleSideMenu] = useState(false);
-  const { toggleToTransition, setRoutePath } = usePageTransition();
 
   const navSlide = {
     initial: {
@@ -28,7 +27,7 @@ const Nav = () => {
     },
   };
   return (
-    <nav className="fixed left-0 top-0 flex items-center justify-between w-screen h-20 m-0 px-10 max-sm:px-[25px]">
+    <nav className="fixed left-0 top-0 flex items-center justify-between z-[1] w-screen h-20 m-0 px-10 max-sm:px-[25px]">
       <DelayedLink href="/">© Madjour amir</DelayedLink>
 
       {/* inline navigation */}
@@ -62,26 +61,51 @@ const Nav = () => {
                 exit="exit"
                 className={clsx(
                   "fixed top-0 right-0 h-screen sm:w-[400px] max-sm:w-screen bg-text",
-                  "flex flex-col items-center justify-center px-4 gap-14 text-left ",
-                  "text-5xl *:w-40 text-background"
+                  "flex flex-col items-center justify-center px-4 gap-4 text-left",
+                  "text-5xl text-background *:w-full"
                 )}
               >
                 <Curve />
-                <DelayedLink href="/" fn={() => setToggleSideMenu(false)}>
-                  Home
-                </DelayedLink>
-                <DelayedLink href="/work" fn={() => setToggleSideMenu(false)}>
-                  Work
-                </DelayedLink>
-                <DelayedLink href="/about" fn={() => setToggleSideMenu(false)}>
-                  About
-                </DelayedLink>
-                <DelayedLink
-                  href="/contact"
-                  fn={() => setToggleSideMenu(false)}
+                <p className="text-background_light text-[14px] leading-snug">
+                  Navigation
+                </p>
+                <div className="bg-background_light h-[1px]"></div>
+                <div
+                  className={clsx(
+                    "flex flex-col items-center justify-center gap-4 *:w-full h-fit py-4",
+                    "*:px-5"
+                  )}
                 >
-                  Contact
-                </DelayedLink>
+                  <DelayedLink
+                    href="/"
+                    className={"relative custom_circle"}
+                    fn={() => setToggleSideMenu(false)}
+                  >
+                    Home
+                  </DelayedLink>
+                  <DelayedLink
+                    href="/work"
+                    className={"relative custom_circle"}
+                    fn={() => setToggleSideMenu(false)}
+                  >
+                    Work
+                  </DelayedLink>
+                  <DelayedLink
+                    href="/about"
+                    className={"relative custom_circle"}
+                    fn={() => setToggleSideMenu(false)}
+                  >
+                    About
+                  </DelayedLink>
+                  <DelayedLink
+                    href="/contact"
+                    className={"relative custom_circle"}
+                    fn={() => setToggleSideMenu(false)}
+                  >
+                    Contact
+                  </DelayedLink>
+                </div>
+                <div className="bg-background_light h-[1px]"></div>
               </motion.div>
             )}
           </AnimatePresence>

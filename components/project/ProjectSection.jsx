@@ -49,7 +49,7 @@ const ProjectSection = () => {
           "sm:px-10 md:px-0"
         )}
       >
-        <h3 className="text-[14px] text-text_light self-start pb-5 lg:pb-10 md:px-[50px]">
+        <h3 className="text-[14px] text-text_light self-start pb-5 lg:pb-10 md:px-20">
           Recent work
         </h3>
         {projects.map((project, index) => {
