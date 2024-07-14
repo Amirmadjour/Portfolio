@@ -1,9 +1,13 @@
+"use client";
 import clsx from "clsx";
 
+import { useState, useEffect } from "react";
 import GithubSVG from "@/public/SVG/GithubSVG";
 import LinkedInSVG from "@/public/SVG/LinkedInSVG";
 
 import "@/styles/utils.css";
+import Confetti from "react-confetti";
+import { isAppPageRouteDefinition } from "next/dist/server/future/route-definitions/app-page-route-definition";
 
 const socials = [
   { label: "Github", svg: <GithubSVG /> },
@@ -25,6 +29,25 @@ const formElements = [
 ];
 
 const Contact = () => {
+  const [confettiIsAppearing, setConfettiIsAppearing] = useState(false);
+  const [dimensions, setDimensions] = useState({
+    width: null,
+    height: null,
+  });
+
+  useEffect(() => {
+    function resize() {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    resize();
+    window.addEventListener("resize", resize);
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
   return (
     <div className="w-screen h-fit flex flex-col px-[25px] bg-text text-background">
       <h2
@@ -58,7 +81,25 @@ const Contact = () => {
           ))}
         </div>
         <div className="flex justify-center items-center w-full">
-          <button className="button border-background_light">Send it</button>
+          <button
+            className="button border-background_light"
+            onClick={() => {
+              setConfettiIsAppearing(true);
+              setTimeout(() => {
+                setConfettiIsAppearing(false);
+              }, 5000);
+            }}
+          >
+            Send it
+          </button>
+        </div>
+
+        <div className="fixed w-screen h-screen inset-0 pointer-events-none">
+          <Confetti
+            numberOfPieces={confettiIsAppearing ? 200 : 0}
+            width={dimensions.width}
+            height={dimensions.height}
+          />
         </div>
 
         <div
