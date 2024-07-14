@@ -34,7 +34,7 @@ const About = () => {
       <div className="w-screen h-fit">
         <div className="w-full h-fit flex flex-col items-center justify-center px-[25px] py-5">
           <p className="w-full h-fit text-xl py-14">
-            With God's help, I help Businesses achieve their endeavours in
+            {"With God's help"}, I help Businesses achieve their endeavours in
             developing high-quality digital products, from websites to mobile
             applications, your product is in good hands.
           </p>

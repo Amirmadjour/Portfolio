@@ -32,7 +32,7 @@ const Contact = () => {
           "font-normal text-[calc(clamp(3.25em,7vw,8em)*0.875)] leading-[1.1] py-[20vh]"
         )}
       >
-        Let's team up to launch your project
+        {"Let's team up to launch your project"}
       </h2>
       <div className="w-full h-fit flex flex-col items-center justify-center gap-10">
         <div className="w-full h-fit flex flex-col items-center justify-center gap-10 py-[10px]">
