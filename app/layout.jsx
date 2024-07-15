@@ -14,7 +14,7 @@ const RootLayout = ({ children }) => {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>
       <body>
-        <div className="flex flex-col h-fit w-fit overflow-auto">
+        <div className="relative flex flex-col h-fit w-fit overflow-auto">
           <Nav />
           <AnimatePresence mode="wait">
             <Curve key={isTransitioning}>{children}</Curve>
