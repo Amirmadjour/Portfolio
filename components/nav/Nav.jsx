@@ -47,21 +47,23 @@ const Nav = () => {
           >
             <motion.button
               layout
-              initial={{ borderRadius: 50, width: 0 }}
+              initial={{ borderRadius: 50, width: 0, height: 0 }}
               animate={{
                 width: 56,
+                height: 56,
                 transition: { duration: 0.3, ease: [0.83, 0, 0.17, 1] },
               }}
               exit={{
                 borderRadius: 50,
                 width: 0,
+                height: 0,
                 transition: {
                   duration: 0.4,
                   ease: [0.83, 0, 0.17, 1],
                 },
               }}
               className={clsx(
-                "relative flex items-center justify-center bg-primary aspect-square rounded-full"
+                "relative flex items-center justify-center bg-primary rounded-full"
               )}
               onClick={() => {
                 setToggleSideMenu((prev) => !prev);
