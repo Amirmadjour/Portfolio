@@ -80,7 +80,7 @@ const Footer = () => {
         >
           Drop a line
         </DelayedLink>
-        <div className="lg:hidden flex flex-col w-full h-fit text-[16px] leading-none justify-center gap-5">
+        <div className="lg:hidden flex flex-col w-full h-fit text-base leading-none justify-center gap-5">
           <Socials />
           <div className="w-full h-[1px] bg-background_light"></div>
           <div className="text_s">

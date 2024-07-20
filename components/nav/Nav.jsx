@@ -16,6 +16,7 @@ import { navSlide } from "./anim";
 import Curve from "./Curve";
 
 import "@/styles/utils.css";
+import Socials from "../footer/Socials";
 
 const Nav = () => {
   const pathName = usePathname();
@@ -92,21 +93,31 @@ const Nav = () => {
         </DelayedLink>
 
         {/* inline navigation */}
-        {/* <div className="sm:flex hidden">
-        <div className="flex gap-3 md:gap-5">
-          <Link href="/work" className="">
+        <div
+          className={clsx(
+            "hidden lg:flex text-base gap-[34px] items-center justify-center w-fit h-fit *:pl-4",
+            pathName === "/" || pathName === "/contact"
+              ? "text-background"
+              : "text-text"
+          )}
+        >
+          <DelayedLink className={"relative custom_circle"} href="/work">
             Work
-          </Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+          </DelayedLink>
+          <DelayedLink className={"relative custom_circle"} href="/about">
+            About
+          </DelayedLink>
+          <DelayedLink className={"relative custom_circle"} href="/contact">
+            Contact
+          </DelayedLink>
         </div>
-  </div> */}
 
         {/* side navigation */}
 
         <button
           className={clsx(
             "flex items-center justify-center w-14 z-10 aspect-square text-background rounded-full",
+            "lg:hidden",
             pathName === "/" || pathName === "/contact"
               ? "text-background"
               : "text-text"
@@ -172,6 +183,9 @@ const Nav = () => {
               </DelayedLink>
             </div>
             <div className="bg-background_light h-[1px]"></div>
+            <div className="hidden lg:block h-fit w-full z-[0]">
+              <Socials />
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>

@@ -17,9 +17,11 @@ const socials = [
 
 const Socials = () => {
   return (
-    <>
-      <h4 className="text-[14px] text-background_light text-left">Socials</h4>
-      <div className="flex items-center justify-between">
+    <div className="flex flex-col justify-between items-center gap-5">
+      <h4 className="text-[14px] text-background_light text-left w-full">
+        Socials
+      </h4>
+      <div className="flex w-full items-center justify-between text-base">
         {socials.map(({ label, svg, link }) => (
           <Link
             target="_blank"
@@ -32,7 +34,7 @@ const Socials = () => {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

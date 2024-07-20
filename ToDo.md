@@ -26,16 +26,11 @@
     - buttons: "All", "Web app" and "Desktop App"
   - Contact page:
     - Form
-  - Footer:
-    - Socials
 
 - Components:
 
   - Work page:
     - buttons: column and grid.
-  - Nav:
-    - inline navigation on desktop.
-    - Socials on desktop
 
 - Redesign:
 
