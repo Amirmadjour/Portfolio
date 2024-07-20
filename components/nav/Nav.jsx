@@ -42,7 +42,7 @@ const Nav = () => {
         {(doesNavBtnAppear || toggleSideMenu) && (
           <div
             className={clsx(
-              "fixed flex top-0 right-0 items-center justify-center w-20 z-[1] aspect-square mr-[13px]"
+              "fixed flex top-0 right-0 items-center justify-center w-20 z-[2] aspect-square mr-[13px]"
             )}
           >
             <motion.button
@@ -106,7 +106,10 @@ const Nav = () => {
 
         <button
           className={clsx(
-            "flex items-center justify-center w-14 z-10 aspect-square text-background rounded-full"
+            "flex items-center justify-center w-14 z-10 aspect-square text-background rounded-full",
+            pathName === "/" || pathName === "/contact"
+              ? "text-background"
+              : "text-text"
           )}
           onClick={() => {
             setToggleSideMenu((prev) => !prev);
@@ -123,7 +126,7 @@ const Nav = () => {
             animate="enter"
             exit="exit"
             className={clsx(
-              "fixed top-0 right-0 h-screen sm:w-[400px] max-sm:w-screen bg-text",
+              "fixed top-0 right-0 h-screen sm:w-[400px] z-[1] max-sm:w-screen bg-text",
               "flex flex-col items-center justify-center px-4 gap-4 text-left",
               "text-5xl text-background *:w-full"
             )}

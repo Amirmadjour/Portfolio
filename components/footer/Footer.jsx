@@ -4,15 +4,9 @@ import a1 from "@/public/images/cat.jpg";
 import DelayedLink from "../nav/DelayedLink";
 import { useState } from "react";
 import clsx from "clsx";
-import GithubSVG from "@/public/SVG/GithubSVG";
-import LinkedInSVG from "@/public/SVG/LinkedInSVG";
 
 import "@/styles/utils.css";
-
-const socials = [
-  { label: "Github", svg: <GithubSVG /> },
-  { label: "LinkedIn", svg: <LinkedInSVG /> },
-];
+import Socials from "./Socials";
 
 const Footer = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -87,20 +81,7 @@ const Footer = () => {
           Drop a line
         </DelayedLink>
         <div className="lg:hidden flex flex-col w-full h-fit text-[16px] leading-none justify-center gap-5">
-          <h4 className="text-[14px] text-background_light text-left">
-            Socials
-          </h4>
-          <div className="flex items-center justify-between">
-            {socials.map(({ label, svg }) => (
-              <div
-                key={label}
-                className="flex items-center justify-center gap-3"
-              >
-                {svg}
-                <h5 className="font-medium">{label}</h5>
-              </div>
-            ))}
-          </div>
+          <Socials />
           <div className="w-full h-[1px] bg-background_light"></div>
           <div className="text_s">
             Designed and developed by{" "}

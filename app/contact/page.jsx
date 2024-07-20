@@ -2,17 +2,10 @@
 import clsx from "clsx";
 
 import { useState, useEffect } from "react";
-import GithubSVG from "@/public/SVG/GithubSVG";
-import LinkedInSVG from "@/public/SVG/LinkedInSVG";
 
 import "@/styles/utils.css";
 import Confetti from "react-confetti";
-import { isAppPageRouteDefinition } from "next/dist/server/future/route-definitions/app-page-route-definition";
-
-const socials = [
-  { label: "Github", svg: <GithubSVG /> },
-  { label: "LinkedIn", svg: <LinkedInSVG /> },
-];
+import Socials from "@/components/footer/Socials";
 
 const formElements = [
   { label: "Your name", placeHolder: "Rodrego gostav" },
@@ -120,18 +113,7 @@ const Contact = () => {
             "*:w-full"
           )}
         >
-          <h4 className="text-sm text-background_light text-left">Socials</h4>
-          <div className="flex items-center justify-between">
-            {socials.map(({ label, svg }) => (
-              <div
-                key={label}
-                className="flex items-center justify-center gap-3"
-              >
-                {svg}
-                <h5 className="font-medium">{label}</h5>
-              </div>
-            ))}
-          </div>
+          <Socials />
           <div className=" h-[1px] bg-background_light"></div>
           <div className="text_s text-center">
             Designed and developed by{" "}
