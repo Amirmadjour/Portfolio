@@ -10,17 +10,19 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const formElements = [
-  { label: "Your name", placeHolder: "Rodrego gostav" },
-  { label: "Your email", placeHolder: "info@something.com" },
+  { id: "name", label: "Your name", placeHolder: "Rodrego gostav" },
+  { id: "email", label: "Your email", placeHolder: "info@something.com" },
   {
+    id: "organization",
     label: "Your organization",
     placeHolder: "Organization & smh",
   },
   {
+    id: "services",
     label: "What services are you looking for",
     placeHolder: "Frontend development, database integration",
   },
-  { label: "Your Message", placeHolder: "Your Message" },
+  { id: "message", label: "Your Message", placeHolder: "Your Message" },
 ];
 
 const Contact = () => {
@@ -34,18 +36,22 @@ const Contact = () => {
     initialValues: {
       name: "",
       email: "",
+      organization: "",
+      services: "",
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("Required"),
+      name: Yup.string().min(3, "minimum 3 letters").required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      message: Yup.string().required("Required"),
+      organization: Yup.string(),
+      services: Yup.string(),
+      message: Yup.string(),
     }),
     onSubmit: async (values, { resetForm }) => {
       const response = await fetch(
         process.env.NODE_ENV === "production"
           ? "https://madjouramir.madjria.com/send-email"
-          : "http://localhost:3001/send-email",
+          : "http://localhost:3000/send-email",
         {
           method: "POST",
           headers: {
@@ -56,7 +62,11 @@ const Contact = () => {
       );
 
       if (response.ok) {
-        setSubmitted(true);
+        setConfettiIsAppearing(true);
+        console.log("confetti should appear");
+        setTimeout(() => {
+          setConfettiIsAppearing(false);
+        }, 2000);
         resetForm();
       } else {
         alert("Failed to send email.");
@@ -92,85 +102,37 @@ const Contact = () => {
           onSubmit={formik.handleSubmit}
           className="w-full h-fit flex flex-col items-center justify-center gap-10 py-[10px]"
         >
-          {formElements.map(({ label, placeHolder }) => (
+          {formElements.map(({ id, label, placeHolder }) => (
             <div
-              key={label}
+              key={id}
               className={clsx(
                 "relative w-full flex flex-col justify-center items-center gap-5 pl-[70px] pt-10 text-base",
                 "border-t border-t-background_light last-of-type:border-b last-of-type:border-b-background_light",
                 "last-of-type:pb-10 input_number"
               )}
             >
-              <label className="w-full text-left" htmlFor="name">
+              <label className="w-full text-left" htmlFor={id}>
                 {label}
               </label>
               <input
                 className="font-medium placeholder:text-background_light bg-inherit w-full focus:outline-none"
-                name="name"
-                id="name"
+                name={id}
+                id={id}
                 placeholder={placeHolder}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values[id]}
               ></input>
+              {formik.touched[id] && formik.errors[id] ? (
+                <div>{formik.errors[id]}</div>
+              ) : null}
             </div>
           ))}
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              className="bg-transparent"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
-            />
-            {formik.touched.name && formik.errors.name ? (
-              <div>{formik.errors.name}</div>
-            ) : null}
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              className="bg-transparent"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div>{formik.errors.email}</div>
-            ) : null}
-          </div>
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              className="bg-transparent"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.message}
-            />
-            {formik.touched.message && formik.errors.message ? (
-              <div>{formik.errors.message}</div>
-            ) : null}
-          </div>
-          <button type="submit">Send</button>
-        </form>
-        <div className="flex justify-center items-center w-full">
-          <button
-            className="button border-background_light"
-            onClick={() => {
-              setConfettiIsAppearing(true);
-              setTimeout(() => {
-                setConfettiIsAppearing(false);
-              }, 2000);
-            }}
-          >
+          <button className="button border-background_light" type="submit">
             Send it
           </button>
-        </div>
+        </form>
+        <div className="flex justify-center items-center w-full"></div>
 
         <div className="fixed w-screen h-screen inset-0 pointer-events-none">
           <Confetti

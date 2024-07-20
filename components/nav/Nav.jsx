@@ -25,7 +25,6 @@ const Nav = () => {
   const [toggleSideMenu, setToggleSideMenu] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log("Page scroll: ", latest);
     if (latest > 400) {
       setDoesNavBtnAppear(true);
     } else {
