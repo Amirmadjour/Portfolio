@@ -9,7 +9,6 @@ export default function Project({
   src,
   role,
   color,
-  transitionName,
   setModal,
 }) {
   return (
@@ -21,7 +20,7 @@ export default function Project({
         setModal({ active: false, index });
       }}
       href={`/about/${title}`}
-      transitionName={transitionName}
+      transitionName={title}
       className={clsx(
         "flex w-full justify-between items-center px-20 py-[100px] cursor-pointer transition-all duration-200",
         "lg:hover:opacity-50 group border-t border-t-[rgb(201, 201, 201)] last-of-type:border-b last-of-type:border-b-[rgb(201, 201, 201)]",

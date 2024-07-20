@@ -22,19 +22,8 @@
 
 - Functionnality:
 
-  - Work page:
-    - buttons: "All", "Web app" and "Desktop App"
   - Contact page:
     - Form
-
-- Components:
-
-  - Work page:
-    - buttons: column and grid.
-
-- Redesign:
-
-  - Footer
 
 - Resources:
 

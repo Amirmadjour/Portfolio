@@ -3,37 +3,7 @@ import Project from "./Project";
 import Modal from "./Modal";
 import { useState } from "react";
 import clsx from "clsx";
-
-const projects = [
-  {
-    title: "Madjria",
-    src: "madjria1.png",
-    role: "Full stack development",
-    transitionName: "Madjria",
-    color: "#000000",
-  },
-  {
-    title: "Majlis",
-    src: "madjria2.png",
-    role: "fontend development",
-    transitionName: "Majlis",
-    color: "#8C8C8C",
-  },
-  {
-    title: "Locomotive",
-    src: "majlis1.png",
-    role: "fontend dev",
-    transitionName: "Madjria",
-    color: "#EFE8D3",
-  },
-  {
-    title: "Silencio",
-    src: "majlis2.png",
-    role: "fontend dev",
-    transitionName: "Madjria",
-    color: "#706D63",
-  },
-];
+import projects from "@/public/json/projects.json";
 
 const ProjectSection = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -52,12 +22,11 @@ const ProjectSection = () => {
           return (
             <Project
               index={index}
-              title={project.title}
+              title={project.name}
               role={project.role}
               src={project.src}
               color={project.color}
               setModal={setModal}
-              transitionName={project.transitionName}
               key={index}
             />
           );

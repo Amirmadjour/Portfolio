@@ -16,7 +16,10 @@
         "desc": "2024 ALGERIA"
       }
     ],
-    "link": "https://madjria.com"
+    "link": "https://madjria.com",
+    "src": "madjria1.png",
+    "role": "Full stack development",
+    "color": "#000000"
   },
   {
     "id": "2",
@@ -34,42 +37,9 @@
         "label": "YEAR & LOCATION",
         "desc": "2024 ALGERIA"
       }
-    ]
-  },
-  {
-    "id": "3",
-    "name": "Locomotive",
-    "info": [
-      {
-        "label": "ROLE",
-        "desc": "Backend developer"
-      },
-      {
-        "label": "PURPOSE",
-        "desc": "Smh website"
-      },
-      {
-        "label": "YEAR & LOCATION",
-        "desc": "2022 ALGERIA"
-      }
-    ]
-  },
-  {
-    "id": "4",
-    "name": "Silencio",
-    "info": [
-      {
-        "label": "ROLE",
-        "desc": "Full stack developer"
-      },
-      {
-        "label": "PURPOSE",
-        "desc": "Bla-bla website"
-      },
-      {
-        "label": "YEAR & LOCATION",
-        "desc": "2023 ALGERIA"
-      }
-    ]
+    ],
+    "src": "madjria2.png",
+    "role": "fontend development",
+    "color": "#8C8C8C"
   }
 ]
