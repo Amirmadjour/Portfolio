@@ -42,13 +42,18 @@ const Contact = () => {
       message: Yup.string().required("Required"),
     }),
     onSubmit: async (values, { resetForm }) => {
-      const response = await fetch("http://localhost:3001/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
+      const response = await fetch(
+        process.env.NODE_ENV === "production"
+          ? "https://madjouramir.madjria.com/send-email"
+          : "http://localhost:3001/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        }
+      );
 
       if (response.ok) {
         setSubmitted(true);
