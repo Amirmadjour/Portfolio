@@ -41,17 +41,18 @@ const Contact = () => {
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().min(3, "minimum 3 letters").required("Required"),
+      name: Yup.string()
+        .min(3, "minimum 3 letters")
+        .max(30, "maximum 30 letters")
+        .required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      organization: Yup.string(),
-      services: Yup.string(),
-      message: Yup.string(),
+      organization: Yup.string().max(),
+      services: Yup.string().max(),
+      message: Yup.string().max(),
     }),
     onSubmit: async (values, { resetForm }) => {
       const response = await fetch(
-        process.env.NODE_ENV === "production"
-          ? "https://madjouramir.madjria.com/send-email"
-          : "http://localhost:3000/send-email",
+        "https://madjouramir.madjria.com/send-email",
         {
           method: "POST",
           headers: {
@@ -124,7 +125,7 @@ const Contact = () => {
                 value={formik.values[id]}
               ></input>
               {formik.touched[id] && formik.errors[id] ? (
-                <div>{formik.errors[id]}</div>
+                <div className="absolute top-2 left-0 text-red-500 text-sm">{formik.errors[id]}</div>
               ) : null}
             </div>
           ))}

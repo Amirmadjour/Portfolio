@@ -20,11 +20,6 @@
   - desktop
   - tablet
 
-- Functionnality:
-
-  - Contact page:
-    - Form
-
 - Resources:
 
   - Madjour Amir:
