@@ -15,11 +15,6 @@
     - filling element when hovered.
     - parallax
 
-- Responsivity:
-
-  - desktop
-  - tablet
-
 - Resources:
 
   - Madjour Amir:

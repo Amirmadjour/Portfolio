@@ -17,7 +17,20 @@
       }
     ],
     "link": "https://madjria.com",
-    "src": "madjria1.png",
+    "src": "madjriaimages/madjria1.png",
+    "images": [
+      "madjriaimages/madjria1.png",
+      "madjriaimages/madjria2.png",
+      "madjriaimages/madjria3.png",
+      "madjriaimages/madjria4.png",
+      "madjriaimages/madjria5.png",
+      "madjriaimages/madjria6.png",
+      "madjriaimages/madjria7.png",
+      "madjriaimages/madjria8.png",
+      "madjriaimages/madjria9.png",
+      "madjriaimages/madjria10.png"
+    ],
+    "includePhoneImages": true,
     "role": "Full stack development",
     "color": "#000000"
   },
@@ -38,7 +51,12 @@
         "desc": "2024 ALGERIA"
       }
     ],
-    "src": "madjria2.png",
+    "images": [
+      "majlisimages/majlis1.png",
+      "majlisimages/majlis2.png"
+    ],
+    "src": "majlisimages/majlis1.png",
+    "includePhoneImages": false,
     "role": "fontend development",
     "color": "#8C8C8C"
   }

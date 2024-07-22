@@ -74,7 +74,7 @@ export default function Modal({ modal, projects }) {
         initial="initial"
         animate={active ? "enter" : "closed"}
         className={clsx(
-          "absolute h-[350px] w-[400px] bg-background overflow-hidden pointer-events-none flex items-center justify-center",
+          "absolute z-[1] h-[350px] w-[400px] bg-background overflow-hidden pointer-events-none flex items-center justify-center",
           "max-lg:hidden"
         )}
       >

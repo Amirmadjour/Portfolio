@@ -1,5 +1,5 @@
 import Footer from "@/components/footer/Footer";
-import hero_image from "@/public/images/nature-lake.jpg";
+import hero_image from "@/public/images/other/nature-lake.jpg";
 import Image from "next/image";
 import clsx from "clsx";
 
@@ -23,33 +23,53 @@ const cards = [
 
 const About = () => {
   return (
-    <div className="w-screen h-fit flex flex-col text-text items-center gap-3">
+    <div className="w-screen h-fit flex flex-col text-text items-center gap-3 lg:px-[25px]">
       <h2
         className={clsx(
-          "text-[calc(clamp(3.25em,7vw,8em)*0.875)] w-full px-[25px] leading-[1.1] pt-[20vh]"
+          "text-[calc(clamp(3.25em,7vw,8em)*0.875)] w-full px-[25px] leading-[1.1] pt-[20vh] lg:py-[30vh]",
+          "px-[25px] sm:px-[65px] md:px-40"
         )}
       >
         Empowering brands to succeed in the digital realm.
       </h2>
       <div className="w-screen h-fit">
-        <div className="w-full h-fit flex flex-col items-center justify-center px-[25px] py-5">
-          <p className="w-full h-fit text-xl py-14">
-            {"With God's help"}, I help Businesses achieve their endeavours in
-            developing high-quality digital products, from websites to mobile
-            applications, your product is in good hands.
-          </p>
-          <Image
-            className="w-full h-auto"
-            src={hero_image}
-            width={0}
-            height={0}
-            style={{ objectFit: "cover" }}
-            alt="a picture of me"
-          />
+        <div className="flex lg:px-[25px]">
+          <div
+            className={clsx(
+              "w-full h-fit flex flex-col items-center justify-center py-5 lg:flex-row lg:justify-between",
+              "px-[25px] sm:px-[65px] md:px-40"
+            )}
+          >
+            <p className="w-full h-fit text-xl py-14 lg:max-w-[400px]">
+              {"With God's help"}, I help Businesses achieve their endeavours in
+              developing high-quality digital products, from websites to mobile
+              applications, your product is in good hands.
+            </p>
+            <Image
+              className="w-full h-auto lg:max-w-[600px]"
+              src={hero_image}
+              width={0}
+              height={0}
+              style={{ objectFit: "cover" }}
+              alt="a picture of me"
+            />
+          </div>
         </div>
-        <div className="w-full h-fit flex flex-col items-center justify-center gap-10 px-[25px] pt-10 pb-20">
-          <h3 className="text-4xl font-medium">I can be of service with...</h3>
-          <div className="flex flex-col items-center justify-center gap-[30px]">
+        <div className="w-full h-fit flex flex-col items-center justify-center gap-10 lg:px-[25px] pt-10 pb-20 lg:py-[100px]">
+          <h3
+            className={clsx(
+              "text-4xl font-medium lg:text-left lg:w-full",
+              "px-[25px] sm:px-[65px] md:px-40"
+            )}
+          >
+            I can be of service with...
+          </h3>
+          <div
+            className={clsx(
+              "flex flex-col items-center justify-center gap-[30px] lg:flex-row",
+              "px-[25px] sm:px-[65px] md:px-40"
+            )}
+          >
             {cards.map(({ number, label, desc }) => (
               <div
                 key={number}

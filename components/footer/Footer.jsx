@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import a1 from "@/public/images/cat.jpg";
+import a1 from "@/public/images/other/cat.jpg";
 import DelayedLink from "../nav/DelayedLink";
 import { useState } from "react";
 import clsx from "clsx";
@@ -34,7 +34,7 @@ const Footer = () => {
   return (
     <div
       className={clsx(
-        "w-screen min-h-screen h-fit flex flex-col justify-center items-center px-[25px] bg-text text-background",
+        "relative w-screen min-h-screen h-fit flex flex-col justify-center items-center px-[25px] bg-text text-background",
         "md:px-20 py-4"
       )}
     >
@@ -44,7 +44,7 @@ const Footer = () => {
           "max-md:text-[60px] max-md:text-center max-lg:justify-center max-lg:flex-col md:gap-10 lg:gap-[60px]"
         )}
       >
-        <div className="flex flex-col w-full md:w-fit h-fit gap-10 items-center">
+        <div className="flex flex-col w-full md:w-fit h-fit gap-10 items-center lg:items-start">
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-start gap-6">
               <Image
@@ -89,7 +89,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="max-lg:hidden">
+      <div className="hidden lg:block absolute bottom-0 left-1/2 -translate-x-1/2">
         Designed and developed by{" "}
         <span className="font-semibold">Madjour Amir</span>
       </div>

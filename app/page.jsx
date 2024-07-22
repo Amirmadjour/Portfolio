@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import hero_image from "@/public/images/nature-lake.jpg";
+import hero_image from "@/public/images/other/nature-lake.jpg";
 import { motion } from "framer-motion";
 import DelayedLink from "@/components/nav/DelayedLink";
 import Footer from "@/components/footer/Footer";
@@ -51,10 +51,9 @@ const Home = () => {
           )}
         >
           <p className={clsx("lg:w-2/3 lg:text-4xl", "w-full text-md")}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Accusantium voluptates alias nulla veritatis dignissimos.
-            Necessitatibus beatae illum amet tempore voluptate velit magni,
-            quasi hic cumque adipisci id doloribus perspiciatis commodi.
+            {
+              "Empowering brands to excel in the digital age. Together, we'establish the new benchmark. Straightforward, consistently at forefront."
+            }
           </p>
           <DelayedLink
             href="/about"
