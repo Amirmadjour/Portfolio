@@ -12,13 +12,7 @@ import "@/styles/utils.css";
 const Home = () => {
   return (
     <div className="flex flex-col w-full h-fit overflow-y-scroll overflow-x-hidden">
-      <div className="absolute top-0 left-0 -z-10 w-screen h-screen">
-        <Image
-          src={hero_image}
-          layout="fill"
-          style={{ objectFit: "cover" }}
-          alt="a picture of me"
-        />
+      <div className="absolute top-0 left-0 -z-10 w-screen h-screen bg-primary">
       </div>
       <div className="flex flex-col -z-10 items-center justify-center w-screen h-screen text-white">
         <motion.div
