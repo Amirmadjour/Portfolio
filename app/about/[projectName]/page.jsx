@@ -1,7 +1,7 @@
 import projectsData from "@/public/json/projects.json";
 import clsx from "clsx";
 import Link from "next/link";
-import macBook from "@/public/images/other/macbook-NoCopyRight.jpg";
+import macBook from "@/public/images/other/pc.jpg";
 import Image from "next/image";
 import DelayedLink from "@/components/nav/DelayedLink";
 
@@ -77,13 +77,29 @@ const Page = ({ params }) => {
           height={0}
           alt=""
         ></Image>
-        <Image
-          src={macBook}
-          width={300}
-          height={0}
-          alt=""
-          className="w-full h-auto object-contain"
-        />
+        {project.includeVideo && (
+          <div className="relative w-full h-auto">
+            <Image
+              src={macBook}
+              width={300}
+              height={0}
+              alt=""
+              className="w-full h-auto object-contain"
+            />
+            <video
+              autoPlay
+              muted
+              loop
+              className="absolute left-1/2 top-16 z-[1] w-[73.5%] -translate-x-1/2"
+            >
+              <source
+                src="https://madjria.com/api/assets/videos/majlis/MajlisVideoGithub.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        )}
         <Image
           src={
             process.env.NODE_ENV !== "production"
@@ -95,13 +111,6 @@ const Page = ({ params }) => {
           height={0}
           alt=""
         ></Image>
-        <Image
-          src={macBook}
-          width={300}
-          height={0}
-          alt=""
-          className="w-full h-auto object-contain"
-        />
         {project.includePhoneImages && (
           <div
             className={clsx(
