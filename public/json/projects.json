@@ -70,7 +70,20 @@
     "includeVideo": true,
     "videoLink": "https://madjria.com/api/assets/videos/majlis/MajlisVideoGithub.mp4",
     "platforme": "majlisimages/pc-majlis.jpg",
-    "role": "Desktop app"
+    "role": "Desktop app",
+    "describer": "Madjria - Innovative Online Marketplace",
+    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "features": {
+      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
+      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
+      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+    },
+    "technologies": {
+      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
+      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
+      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+    },
+    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
   },
   {
     "id": "3",
@@ -97,7 +110,20 @@
     "src": "ramaximages/ramax1.png",
     "includePhoneImages": false,
     "includeVideo": false,
-    "role": "Data analysis website"
+    "role": "Data analysis website",
+    "describer": "Madjria - Innovative Online Marketplace",
+    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "features": {
+      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
+      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
+      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+    },
+    "technologies": {
+      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
+      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
+      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+    },
+    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
   },
   {
     "id": "4",
@@ -123,7 +149,20 @@
     "src": "majlisimages/majlis1.png",
     "includePhoneImages": false,
     "includeVideo": false,
-    "role": "Digit recognition mobile app"
+    "role": "Digit recognition mobile app",
+    "describer": "Madjria - Innovative Online Marketplace",
+    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "features": {
+      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
+      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
+      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+    },
+    "technologies": {
+      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
+      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
+      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+    },
+    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
   },
   {
     "id": "5",
@@ -151,6 +190,19 @@
     "includeVideo": true,
     "videoLink": "https://madjria.com/api/assets/videos/idema/idema.mp4",
     "platforme": "idemaimages/pc-idema.jpg",
-    "role": "Mini compiler (website)"
+    "role": "Mini compiler (website)",
+    "describer": "Madjria - Innovative Online Marketplace",
+    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "features": {
+      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
+      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
+      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+    },
+    "technologies": {
+      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
+      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
+      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+    },
+    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
   }
 ]
