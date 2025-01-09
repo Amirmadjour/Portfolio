@@ -46,7 +46,7 @@ const Home = () => {
         >
           <p className={clsx("lg:w-2/3 lg:text-4xl", "w-full text-md")}>
             {
-              "Empowering brands to excel in the digital age. Together, we'establish the new benchmark. Straightforward, consistently at forefront."
+              "Empowering brands to excel in the digital age. Together, we establish the new benchmark. Straightforward, consistently at forefront."
             }
           </p>
           <DelayedLink

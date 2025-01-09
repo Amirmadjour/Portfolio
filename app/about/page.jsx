@@ -2,6 +2,7 @@ import Footer from "@/components/footer/Footer";
 import hero_image from "@/public/images/other/nature-lake.jpg";
 import Image from "next/image";
 import clsx from "clsx";
+import Card from "@/components/custom/Card";
 
 const cards = [
   {
@@ -71,20 +72,7 @@ const About = () => {
             )}
           >
             {cards.map(({ number, label, desc }) => (
-              <div
-                key={number}
-                className={clsx(
-                  "flex flex-col items-center justify-center gap-5",
-                  "*:text-left *:w-full"
-                )}
-              >
-                <p className="text-text_light text-[14px] leading-snug">
-                  {number}
-                </p>
-                <h4 className="font-medium text-3xl">{label}</h4>
-                <div className=" h-[1px] bg-text_light"></div>
-                <p className="h-fit text-lg">{desc}</p>
-              </div>
+              <Card key={number} number={number} label={label} desc={desc}/>
             ))}
           </div>
         </div>

@@ -1,11 +1,13 @@
 import projectsData from "@/public/json/projects.json";
 import clsx from "clsx";
 import Link from "next/link";
-import macBook from "@/public/images/other/pc.jpg";
 import Image from "next/image";
 import DelayedLink from "@/components/nav/DelayedLink";
 
 import "@/styles/utils.css";
+import ImageViewer from "@/components/custom/ImageViewer";
+import Describer from "@/components/custom/Describer";
+import Card from "@/components/custom/Card";
 
 export async function generateStaticParams() {
   // Return an array of possible params objects
@@ -29,6 +31,15 @@ const Page = ({ params }) => {
       </div>
     );
 
+  const phoneImages = project.phoneImages
+    ? project.phoneImages.map((i) => ({
+        src:
+          process.env.NODE_ENV !== "production"
+            ? `/images/${i}`
+            : `/Portfolio/images/${i}`,
+      }))
+    : null;
+
   return (
     <div className="w-screen h-screen flex flex-col items-center gap-[10px]">
       <h1
@@ -42,15 +53,11 @@ const Page = ({ params }) => {
       <div
         className={clsx(
           "relative w-full h-fit flex flex-col gap-[50px] pb-20 lg:flex-row lg:gap-12",
-          "sm:px-[65px] md:px-40"
+          "px-[25px] sm:px-[65px] md:px-40"
         )}
       >
         {project.info.map(({ label, desc }) => (
-          <div key={label} className="w-full h-fit flex flex-col gap-5">
-            <p className="text-text_light text-sm">{label}</p>
-            <div className="w-full h-[1px] bg-text_light"></div>
-            <p className="text-lg">{desc}</p>
-          </div>
+          <Describer key={label} label={label} desc={desc} />
         ))}
         {project.link != null && (
           <Link
@@ -65,22 +72,54 @@ const Page = ({ params }) => {
           </Link>
         )}
       </div>
-      <div className="w-full flex flex-col gap-3 *:my-5">
-        <Image
-          src={
-            process.env.NODE_ENV !== "production"
-              ? `/images/${project.images[0]}`
-              : `/Portfolio/images/${project.images[0]}`
-          }
-          className={clsx("w-full h-auto bg-text_light")}
-          width={300}
-          height={0}
-          alt=""
-        ></Image>
+      <div
+        className={clsx(
+          "w-full flex flex-col gap-3 *:my-5",
+          "px-[25px] sm:px-[65px] md:px-40"
+        )}
+      >
+        <Describer label={"DESCRIPTION"} desc={project.describer} />
+        <p className="text-2xl ">{project.description}</p>
+        <ImageViewer images={project.images} />
+        <Describer
+          label={"KEY FEATURES & TECHNOLOGIES"}
+          desc={project.describer}
+        />
+        {Object.entries(project.features).map(
+          ([category, description], index) => (
+            <div
+              key={index}
+              className="flex flex-col items-start justify-center gap-5"
+            >
+              <span className="text-[32px] font-medium">{category}</span>
+              <span>{description}</span>
+            </div>
+          )
+        )}
+        <div
+          className={clsx(
+            "w-full flex flex-col items-center justify-center gap-[30px] lg:flex-row"
+          )}
+        >
+          {Object.entries(project.technologies).map(
+            ([category, description], index) => (
+              <Card
+                key={index}
+                number={"0" + (index + 1)}
+                label={category}
+                desc={description}
+              />
+            )
+          )}
+        </div>
         {project.includeVideo && (
           <div className="relative w-full h-auto">
             <Image
-              src={macBook}
+              src={
+                process.env.NODE_ENV !== "production"
+                  ? `/images/${project.platforme}`
+                  : `/Portfolio/images/${project.platforme}`
+              }
               width={300}
               height={0}
               alt=""
@@ -90,41 +129,42 @@ const Page = ({ params }) => {
               autoPlay
               muted
               loop
-              className="absolute left-1/2 top-16 z-[1] w-[73.5%] -translate-x-1/2"
+              className="absolute left-1/2 top-[8.5%] z-[1] w-[73.5%] -translate-x-1/2"
             >
-              <source
-                src="https://madjria.com/api/assets/videos/majlis/MajlisVideoGithub.mp4"
-                type="video/mp4"
-              />
+              <source src={project.videoLink} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         )}
-        <Image
-          src={
-            process.env.NODE_ENV !== "production"
-              ? `/images/${project.images[1]}`
-              : `/Portfolio/images/${project.images[1]}`
-          }
-          className={clsx("w-full h-auto bg-text_light")}
-          width={300}
-          height={0}
-          alt=""
-        ></Image>
         {project.includePhoneImages && (
           <div
             className={clsx(
-              "w-full h-[50vw] flex gap-5 justify-evenly",
-              "*:w-[30%] *:h-full *:bg-text_light *:rounded-md lg:my-32 lg:py-10",
-              "sm:px-[65px] md:px-40"
+              "w-full h-fit flex flex-col gap-5 justify-between",
+              "lg:my-32 lg:py-10"
             )}
           >
-            {/* Those are images from the study case */}
-            <div></div>
-            <div></div>
-            <div></div>
+            <Describer label={"RESPONSIVENESS"} desc={"Phone"} />
+            <div
+              className={clsx(
+                "w-full h-fit flex flex-col sm:flex-row sm:*:w-[30%] gap-5 justify-between"
+              )}
+            >
+              {/* Those are images from the study case */}
+              {phoneImages.map((img, index) => (
+                <img
+                  key={index}
+                  src={img.src}
+                  className="border w-auto h-full rounded-md bg-text_light"
+                  alt={`Image ${index}`}
+                />
+              ))}
+            </div>
           </div>
         )}
+        <div className="w-full h-fit pb-36">
+          <Describer label={"CONCLUSION"} desc={project.describer} />
+          <p className="text-2xl ">{project.description}</p>
+        </div>
       </div>
       <div className="relative flex flex-col items-center justify-center w-screen min-h-screen h-fit bg-text text-background gap-10">
         <DelayedLink

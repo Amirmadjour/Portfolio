@@ -19,7 +19,7 @@ const RootLayout = ({ children }) => {
       </head>
       <body>
         <QueryClientProvider client={queryClient}>
-          <div className="relative flex flex-col h-fit w-fit overflow-auto">
+          <div className="relative flex flex-col h-fit w-fit overflow-auto text-text">
             <Nav />
             <AnimatePresence mode="wait">
               <Curve key={isTransitioning}>{children}</Curve>

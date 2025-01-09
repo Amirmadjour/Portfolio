@@ -23,9 +23,26 @@
       "madjriaimages/madjria2.png"
     ],
     "includePhoneImages": true,
+    "phoneImages": [
+      "madjriaimages/Screenshot1.jpg",
+      "madjriaimages/Screenshot2.jpg",
+      "madjriaimages/Screenshot3.jpg"
+    ],
     "includeVideo": false,
-    "role": "Full stack development",
-    "color": "#000000"
+    "role": "E-commerce website",
+    "describer": "Madjria - Innovative Online Marketplace",
+    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "features": {
+      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
+      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
+      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+    },
+    "technologies": {
+      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
+      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
+      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+    },
+    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
   },
   {
     "id": "2",
@@ -51,7 +68,89 @@
     "src": "majlisimages/majlis1.png",
     "includePhoneImages": false,
     "includeVideo": true,
-    "role": "fontend development",
-    "color": "#8C8C8C"
+    "videoLink": "https://madjria.com/api/assets/videos/majlis/MajlisVideoGithub.mp4",
+    "platforme": "majlisimages/pc-majlis.jpg",
+    "role": "Desktop app"
+  },
+  {
+    "id": "3",
+    "name": "Ramax",
+    "info": [
+      {
+        "label": "ROLE",
+        "desc": "Full stack and data developer"
+      },
+      {
+        "label": "PURPOSE",
+        "desc": "Data analysis website"
+      },
+      {
+        "label": "YEAR & LOCATION",
+        "desc": "2024 ALGERIA"
+      }
+    ],
+    "link": "https://test.madjria.com",
+    "images": [
+      "ramaximages/ramax1.png",
+      "ramaximages/ramax2.png"
+    ],
+    "src": "ramaximages/ramax1.png",
+    "includePhoneImages": false,
+    "includeVideo": false,
+    "role": "Data analysis website"
+  },
+  {
+    "id": "4",
+    "name": "Draam",
+    "info": [
+      {
+        "label": "ROLE",
+        "desc": "Full stack and data developer"
+      },
+      {
+        "label": "PURPOSE",
+        "desc": "Digit recognition mobile app"
+      },
+      {
+        "label": "YEAR & LOCATION",
+        "desc": "2024 ALGERIA"
+      }
+    ],
+    "images": [
+      "majlisimages/majlis1.png",
+      "majlisimages/majlis2.png"
+    ],
+    "src": "majlisimages/majlis1.png",
+    "includePhoneImages": false,
+    "includeVideo": false,
+    "role": "Digit recognition mobile app"
+  },
+  {
+    "id": "5",
+    "name": "Idema",
+    "info": [
+      {
+        "label": "ROLE",
+        "desc": "Full stack developer"
+      },
+      {
+        "label": "PURPOSE",
+        "desc": "Mini compiler (website)"
+      },
+      {
+        "label": "YEAR & LOCATION",
+        "desc": "2024 ALGERIA"
+      }
+    ],
+    "images": [
+      "idemaimages/idema1.png",
+      "idemaimages/idema2.png"
+    ],
+    "src": "idemaimages/idema1.png",
+    "includePhoneImages": false,
+    "includeVideo": true,
+    "videoLink": "https://madjria.com/api/assets/videos/idema/idema.mp4",
+    "platforme": "idemaimages/pc-idema.jpg",
+    "role": "Mini compiler (website)"
   }
 ]

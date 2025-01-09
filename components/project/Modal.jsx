@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import Image from "next/image";
 import gsap from "gsap";
 import clsx from "clsx";
@@ -20,7 +20,7 @@ const scaleAnimation = {
   },
 };
 
-export default function Modal({ modal, projects }) {
+export default function Modal({ modal, projects, colors }) {
   const { active, index } = modal;
   const modalContainer = useRef(null);
   const cursor = useRef(null);
@@ -83,11 +83,11 @@ export default function Modal({ modal, projects }) {
           className="w-full h-full absolute transition-[top] duration-500 ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
         >
           {projects.map((project, index) => {
-            const { src, color } = project;
+            const { src } = project;
             return (
               <div
                 className="w-full h-full flex items-center justify-center"
-                style={{ backgroundColor: color }}
+                style={{ backgroundColor: colors[index % colors.length] }}
                 key={`modal_${index}`}
               >
                 <Image

@@ -7,6 +7,7 @@ import projects from "@/public/json/projects.json";
 
 const ProjectSection = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
+  const bgColors = ["#00FF9C", "#B6FFA1", "#FEFFA7", "#FFE700"]
   return (
     <div className="flex flex-col w-full h-fit py-10">
       <div
@@ -25,7 +26,7 @@ const ProjectSection = () => {
               title={project.name}
               role={project.role}
               src={project.src}
-              color={project.color}
+              color={bgColors[index % bgColors.length]}
               setModal={setModal}
               key={index}
             />
@@ -33,7 +34,7 @@ const ProjectSection = () => {
         })}
       </div>
 
-      <Modal modal={modal} projects={projects} />
+      <Modal modal={modal} projects={projects} colors={bgColors}/>
     </div>
   );
 };

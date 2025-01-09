@@ -11,6 +11,7 @@ export default function Project({
   color,
   setModal,
 }) {
+  console.log("color: ", color)
   return (
     <DelayedLink
       onMouseEnter={() => {
