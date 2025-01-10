@@ -134,14 +134,14 @@ const ImageViewer = ({ images }) => {
                 className="img-slider-btn left-5"
                 aria-label="View Previous Image"
               >
-                <ChevronLeft className="fill-none stroke-text" aria-hidden />
+                <ChevronLeft className="fill-none stroke-[#1b1d1b]" aria-hidden />
               </button>
               <button
                 onClick={showNextImage}
                 className="img-slider-btn right-5"
                 aria-label="View Next Image"
               >
-                <ChevronRight className="fill-none stroke-text" aria-hidden />
+                <ChevronRight className="fill-none stroke-[#1b1d1b]" aria-hidden />
               </button>
             </motion.div>
           </motion.div>
