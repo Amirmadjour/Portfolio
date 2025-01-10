@@ -35,64 +35,43 @@ const Footer = () => {
     <div
       className={clsx(
         "relative w-screen min-h-screen h-fit flex flex-col justify-center items-center px-[25px] bg-text text-background",
-        "md:px-20 py-4"
+        "md:px-20 py-4 overflow-hidden"
       )}
     >
       <div
         className={clsx(
-          "max-w-[1100px] w-full h-full flex text-[100px] leading-none items-center justify-between gap-[3vh]",
-          "max-md:text-[60px] max-md:text-center max-lg:justify-center max-lg:flex-col md:gap-10 lg:gap-[60px]"
+          "w-full h-full flex flex-col items-center justify-between gap-[20vh]"
         )}
       >
-        <div className="flex flex-col w-full md:w-fit h-fit gap-10 items-center lg:items-start">
-          <div className="flex flex-col gap-1">
-            <div className="flex items-center justify-start gap-6">
-              <Image
-                src={a1}
-                height={80}
-                width={80}
-                className="rounded-full aspect-square h-20 object-cover"
-                alt=""
-              ></Image>
-              <p>{"Let's"} </p>
-            </div>
-            <p>partner up</p>
-          </div>
-          <div className="flex items-center max-md:flex-col max-md:w-full justify-between gap-5">
+        <div className="flex max-md:flex-col w-full h-fit gap-10 md:justify-between items-center lg:mb-[20vw]">
+          <DelayedLink href="/contact">
+            <p className="text-2xl font-medium">Get in touch with us now!</p>
+          </DelayedLink>
+          <div className="w-full flex items-center max-md:flex-col md:w-fit justify-between gap-5">
             {buttons.map(({ text, copied, setCopied }) => (
               <button
                 key={text}
                 onClick={() => handleCopy({ text, setCopied })}
-                className={clsx("button border-background_light w-full")}
+                className={clsx(
+                  "button border-background_light w-full md:border-none md:w-fit ",
+                  "py-3"
+                )}
               >
                 {copied ? "copied" : text}
               </button>
             ))}
           </div>
         </div>
-        <div className="h-[600px] w-[1px] bg-background_light max-lg:hidden"></div>
-        <DelayedLink
-          href="/contact"
-          className={clsx(
-            "rounded-full w-40  aspect-square bg-primary flex items-center justify-center text-xl ",
-            "max-md:w-[120px] max-md:text-[14px] leading-none"
-          )}
-        >
-          Drop a line
-        </DelayedLink>
         <div className="lg:hidden flex flex-col w-full h-fit text-base leading-none justify-center gap-5">
           <Socials />
-          <div className="w-full h-[1px] bg-background_light"></div>
-          <div className="text_s">
-            Designed and developed by{" "}
-            <span className="font-semibold">Madjour Amir</span>
-          </div>
         </div>
       </div>
-      <div className="hidden lg:block absolute bottom-0 left-1/2 -translate-x-1/2">
-        Designed and developed by{" "}
-        <span className="font-semibold">Madjour Amir</span>
-      </div>
+      <p
+        className="bottom-0 absolute text-[28vw] select-none translate-y-1/4"
+        style={{ fontFamily: "var(--font-kaushan-sans)" }}
+      >
+        madjour
+      </p>
     </div>
   );
 };

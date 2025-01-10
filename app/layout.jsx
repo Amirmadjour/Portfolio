@@ -6,6 +6,7 @@ import Curve from "@/components/page/Curve";
 import "@/styles/global.css";
 import { AnimatePresence } from "framer-motion";
 import usePageTransition from "@/zustand/pageTransition";
+import clsx from "clsx";
 
 const queryClient = new QueryClient();
 
@@ -19,7 +20,11 @@ const RootLayout = ({ children }) => {
       </head>
       <body>
         <QueryClientProvider client={queryClient}>
-          <div className="relative flex flex-col h-fit w-fit overflow-auto text-text">
+          <div
+            className={clsx(
+              "relative flex flex-col h-fit w-fit overflow-auto text-text "
+            )}
+          >
             <Nav />
             <AnimatePresence mode="wait">
               <Curve key={isTransitioning}>{children}</Curve>

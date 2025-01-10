@@ -3,17 +3,27 @@
 @tailwind utilities;
 
 @layer base {
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
+
+  @font-face {
+    font-family: "Kaushan Sans";
+    src: url("/fonts/KaushanScript-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
   :root {
     --text: #1b1d1b;
     --text-light: rgba(28, 28, 28, 0.3);
     --background: #ffffff;
     --background-light: rgba(255, 255, 255, 0.3);
-    --primary: #16C47F;
+    --primary: #16c47f;
     --secondary: #157f4d;
     --accent: #1cab98;
+    --font-kaushan-sans: "Kaushan Sans", sans-serif;
 
     --padding: clamp(25px, 6vw, 130px);
     /*100, 80, 40, 34, 32, 24, 20, 16, 14
