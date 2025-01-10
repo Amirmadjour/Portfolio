@@ -10,7 +10,12 @@ import "./styles/ImageSlider.css";
 const ImageViewer = ({ images }) => {
   const [viewer, setViewer] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
-  const [imagePosition, setImagePosition] = useState({ top: 0, left: 0, width: 0, height: 0 });
+  const [imagePosition, setImagePosition] = useState({
+    top: 0,
+    left: 0,
+    width: 0,
+    height: 0,
+  });
 
   const cancel = () => {
     setViewer(false);
@@ -52,9 +57,9 @@ const ImageViewer = ({ images }) => {
             }
             className={clsx(
               idx === 0
-                ? "absolute top-[250px] left-[50px]"
-                : "absolute top-[50px] left-[250px]",
-              "w-[400px] aspect-square rounded-[20px] bg-text_light shadow-xl object-cover cursor-pointer"
+                ? "absolute top-[30%] left-[10%]"
+                : "absolute top-[10%] left-[30%]",
+              "w-[60%] aspect-square rounded-[20px] bg-text_light shadow-xl object-cover cursor-pointer"
             )}
             width={300}
             height={0}
@@ -82,7 +87,7 @@ const ImageViewer = ({ images }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <X />
+              <X className="text-text"/>
             </motion.button>
 
             {/* Image Slider */}
@@ -129,14 +134,14 @@ const ImageViewer = ({ images }) => {
                 className="img-slider-btn left-5"
                 aria-label="View Previous Image"
               >
-                <ChevronLeft className="fill-none stroke-white" aria-hidden />
+                <ChevronLeft className="fill-none stroke-text" aria-hidden />
               </button>
               <button
                 onClick={showNextImage}
                 className="img-slider-btn right-5"
                 aria-label="View Next Image"
               >
-                <ChevronRight className="fill-none stroke-white" aria-hidden />
+                <ChevronRight className="fill-none stroke-text" aria-hidden />
               </button>
             </motion.div>
           </motion.div>
