@@ -87,7 +87,7 @@ const ImageViewer = ({ images }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <X className="text-text"/>
+              <X className="text-text" />
             </motion.button>
 
             {/* Image Slider */}
@@ -134,14 +134,30 @@ const ImageViewer = ({ images }) => {
                 className="img-slider-btn left-5"
                 aria-label="View Previous Image"
               >
-                <ChevronLeft className="fill-none stroke-[#1b1d1b]" aria-hidden />
+                <ChevronLeft
+                  className="fill-none stroke-[#1b1d1b]"
+                  style={{
+                    fill: "none",
+                    stroke: "currentColor",
+                    color: "#1b1d1b",
+                  }}
+                  aria-hidden
+                />
               </button>
               <button
                 onClick={showNextImage}
                 className="img-slider-btn right-5"
                 aria-label="View Next Image"
               >
-                <ChevronRight className="fill-none stroke-[#1b1d1b]" aria-hidden />
+                <ChevronRight
+                  className="fill-none stroke-[#1b1d1b]"
+                  style={{
+                    fill: "none",
+                    stroke: "currentColor",
+                    color: "#1b1d1b",
+                  }}
+                  aria-hidden
+                />
               </button>
             </motion.div>
           </motion.div>
