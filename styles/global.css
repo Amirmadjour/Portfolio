@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    overflow-x: hidden;
+  }
   :root {
     --text: #1b1d1b;
     --text-light: rgba(28, 28, 28, 0.3);
