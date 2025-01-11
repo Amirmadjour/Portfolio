@@ -143,10 +143,10 @@
       }
     ],
     "images": [
-      "majlisimages/majlis1.png",
-      "majlisimages/majlis2.png"
+      "draamimages/phonedraam1.jpg",
+      "draamimages/phonedraam2.jpg"
     ],
-    "src": "majlisimages/majlis1.png",
+    "src": "draamimages/phonedraam1.jpg",
     "includePhoneImages": false,
     "includeVideo": false,
     "role": "Digit recognition mobile app",

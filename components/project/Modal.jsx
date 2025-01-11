@@ -91,14 +91,14 @@ export default function Modal({ modal, projects, colors }) {
                 key={`modal_${index}`}
               >
                 <Image
-                  className="h-auto"
+                  className="h-[250px] object-contain"
                   src={
                     process.env.NODE_ENV !== "production"
                       ? `/images/${src}`
                       : `/Portfolio/images/${src}`
                   }
                   width={300}
-                  height={0}
+                  height={250}
                   alt="image"
                 />
               </div>

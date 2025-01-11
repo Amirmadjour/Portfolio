@@ -2,7 +2,7 @@
 const nextConfig = {
   output: "export",
   images: { unoptimized: true },
-  assetPrefix: "/Portfolio", // Prefix for static assets
+  assetPrefix: "/Portfolio",
 };
 
 export default nextConfig;

@@ -121,7 +121,7 @@ const ImageViewer = ({ images }) => {
                         : `/Portfolio/images/${img}`
                     }
                     alt=""
-                    className="rounded-xl"
+                    className="max-h-full rounded-xl object-contain"
                     width={1200}
                     height={0}
                   />
