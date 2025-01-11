@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import hero_image from "@/public/images/other/nature-lake.jpg";
 import { motion } from "framer-motion";
 import DelayedLink from "@/components/nav/DelayedLink";
 import Footer from "@/components/footer/Footer";
