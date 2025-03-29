@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
       </div>
       <p
-        className="bottom-0 absolute text-[28vw] select-none translate-y-1/4"
+        className="bottom-0 absolute text-[28vw] select-none translate-y-1/4 -translate-x-[3.5%]"
         style={{ fontFamily: "var(--font-kaushan-sans)" }}
       >
         madjour

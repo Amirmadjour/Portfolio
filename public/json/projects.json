@@ -198,19 +198,19 @@
     "videoLink": "https://madjria.com/api/assets/videos/idema/idema.mp4",
     "includeMobileVideo": false,
     "platforme": "idemaimages/pc-idema.jpg",
-    "role": "Mini compiler (website)",
-    "describer": "Madjria - Innovative Online Marketplace",
-    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "role": "Mini compiler & IDE (website)",
+    "describer": "Idema - Innovative Mini compiler & IDE",
+    "description": "IDEMA (Integrated Development Environment for the Snale language) is a powerful yet lightweight compiler and IDE designed for executing and debugging Snale programs efficiently. With a modern, user-friendly interface, IDEMA supports multi-file editing through a tabbed layout, allowing developers to seamlessly switch between different Snale scripts.",
     "features": {
-      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
-      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
-      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+      "Snale Language Execution & Debugging": "Compile and run Snale programs with real-time debugging capabilities.",
+      "Multi-File Support": "Open and manage multiple files simultaneously using an intuitive tab system.",
+      "Light & Dark Themes": "Customize the interface with built-in light and dark modes for better readability.",
+      "Optimized Workflow": "Designed for smooth navigation and efficient coding experience."
     },
     "technologies": {
-      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
-      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
-      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+      "Frontend Development": "Next.js, Tailwind CSS, Zustand and ShadCN UI.",
+      "Backend Development": "Next.js and REST api."
     },
-    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
+    "conclusion": "IDEMA is a modern, lightweight IDE and mini compiler designed specifically for the Snale programming language. With features like multi-file tab management, real-time execution and debugging, and customizable themes, IDEMA offers a seamless coding experience for developers."
   }
 ]
