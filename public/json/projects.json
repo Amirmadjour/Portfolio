@@ -29,6 +29,7 @@
       "madjriaimages/Screenshot3.jpg"
     ],
     "includeVideo": false,
+    "includeMobileVideo": false,
     "role": "E-commerce website",
     "describer": "Madjria - Innovative Online Marketplace",
     "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
@@ -70,20 +71,23 @@
     "includeVideo": true,
     "videoLink": "https://madjria.com/api/assets/videos/majlis/MajlisVideoGithub.mp4",
     "platforme": "majlisimages/pc-majlis.jpg",
+    "includeMobileVideo": false,
     "role": "Desktop app",
-    "describer": "Madjria - Innovative Online Marketplace",
-    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "describer": "Majlis - Innovative Disciplinary Council Management",
+    "description": "The Majlis Desktop App is a management solution developed for handling Disciplinary Council processes at a university. It is designed to streamline the management of disciplinary cases, user roles, and reporting tasks within an academic environment. Its intuitive interface and robust backend ensure seamless operation while maintaining data integrity.",
     "features": {
-      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
-      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
-      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+      "Case Management": "Records and tracks disciplinary cases with detailed logs, Updates case status and assigns follow-up actions efficiently.",
+      "User Role Management": "Provides role-based permissions for admins, staff, and council members.",
+      "Real-Time Reporting": "Generates reports summarizing case outcomes and council decisions."
     },
     "technologies": {
-      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
-      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
-      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+      "Frontend": "React with Tailwind CSS for a responsive and visually appealing user interface.",
+      "State Management": "Zustand for managing global state effectively.",
+      "Backend": "Node.js and Express.js for API development and server-side logic.",
+      "Database": "MySQL for structured data storage and efficient queries.",
+      "Desktop Framework": "Electron to package the app for desktop platforms with cross-platform compatibility."
     },
-    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
+    "conclusion": "The Majlis Desktop App addresses real-world challenges with an innovative software solution. Its focus on disciplinary council management highlights attention to detail, user needs, and organizational goals. This project demonstrates expertise in building full-stack, cross-platform applications with modern technologies, showcasing problem-solving skills and the ability to create impactful solutions."
   },
   {
     "id": "3",
@@ -110,20 +114,21 @@
     "src": "ramaximages/ramax1.png",
     "includePhoneImages": false,
     "includeVideo": false,
+    "includeMobileVideo": false,
     "role": "Data analysis website",
-    "describer": "Madjria - Innovative Online Marketplace",
-    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "describer": "Ramax - Innovative Data Analysis",
+    "description": "Ramax is a powerful data analysis platform designed to help users upload and process datasets with ease. Built using Next.js, Django, and Tailwind CSS, the website provides a seamless and efficient way to analyze data, handle missing values, and visualize results through interactive charts. Its user-friendly interface and robust backend allow for smooth data processing and insightful analysis, making it a valuable tool for professionals and enthusiasts in the data science field.",
     "features": {
-      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
-      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
-      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+      "Data Upload and Management": "Upload datasets in CSV format, View, sort, and organize dataset's info in an intuitive interface.",
+      "Handling Missing Values": "Multiple algorithms to handle missing data, k-NN, PSO, Linear, Multiple Regression and Mirjalili Algorithm.",
+      "Data Visualization": "Generate pie charts, stacked bar charts, and other visualizations to uncover trends and insights."
     },
     "technologies": {
-      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
-      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
-      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+      "Frontend": "Next.js and Tailwind CSS for a responsive and SEO-friendly User interface",
+      "Backend": "Django: Handles server-side operations, algorithms, and API endpoints.",
+      "Algorithms": "mplementation of k-NN, PSO, and Mirjalili algorithms for filling missing values."
     },
-    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
+    "conclusion": "Ramax is a comprehensive solution for data analysts and businesses seeking to process and analyze datasets efficiently. Its robust handling of missing values using advanced algorithms like k-NN, PSO, and Mirjalili makes it a standout tool for preparing data for machine learning and statistical tasks. The integration of powerful visualization features enhances decision-making by turning raw data into actionable insights. By combining the scalability of Django, the performance of Next.js, and the elegance of Tailwind CSS, Ramax offers a seamless and user-friendly platform that empowers users to tackle complex data challenges effortlessly."
   },
   {
     "id": "4",
@@ -149,20 +154,22 @@
     "src": "draamimages/phonedraam1.jpg",
     "includePhoneImages": false,
     "includeVideo": false,
+    "includeMobileVideo": true,
+    "mobileVideoLink": "/",
     "role": "Digit recognition mobile app",
-    "describer": "Madjria - Innovative Online Marketplace",
-    "description": "Madjria is a modern and dynamic eCommerce platform designed to connect buyers and sellers in an intuitive and seamless shopping experience. Built using (Mysql, Express.js, React, Node.js), the platform offers a robust and scalable solution for online marketplaces, ensuring high performance even with heavy user traffic.",
+    "describer": "Draam - Intuitive digit recognition app",
+    "description": "Draam is a mobile application built using Expo for the frontend and Django for the backend. It is designed to handle digit recognition using AI, providing users with an intuitive and efficient way to recognize and process handwritten or printed digits. With a focus on accuracy and speed, Draam leverages machine learning to deliver seamless recognition capabilities, making it suitable for various applications such as digit-based input systems, automated data entry, and educational tools.",
     "features": {
-      "User-Friendly Design": "Intuitive and responsive interface for both desktop and mobile users.",
-      "Customizable Product Listings": "Sellers can easily manage their products, including pricing, images, and descriptions.",
-      "Optimized Performance": "Lightning-fast load times and efficient server-side rendering for a smooth user experience."
+      "AI-Powered Digit Recognition": "Draam utilizes advanced AI models to accurately recognize handwritten or printed digits, ensuring high precision and reliability in real-time.",
+      "Seamless Mobile Experience": "Built with Expo, the app provides a smooth and responsive user interface, optimized for both Android and iOS devices, making digit recognition effortless.",
+      "Fast & Secure Backend Processing": "Powered by Django, the backend efficiently processes digit recognition requests while maintaining data security and scalability for future enhancements."
     },
     "technologies": {
-      "Frontend Development": "React, Redux for state management, Tailwind CSS for styling.",
-      "Backend Development": "Node.js with Express.js for APIs, Mysql for database management.",
-      "Hosting": "Deployed on scalable cloud infrastructure to handle high traffic volumes."
+      "Frontend Development": "Expo (React Native), Tailwind CSS, Zustand, React Query",
+      "Backend Development": "Django (Python), Django Rest Framework (DRF)",
+      "Hosting": "cPanel (for hosting the Django backend)"
     },
-    "conclusion": "Madjria showcases my ability to build a full-scale online marketplace with a focus on performance, design, and user engagement. It also highlights my expertise in full-stack development, API integration, and delivering solutions tailored to client needs."
+    "conclusion": "Draam is a powerful AI-driven mobile application designed for seamless digit recognition. With an Expo-based frontend utilizing Tailwind CSS, Zustand, and React Query, it ensures a smooth and responsive user experience. The backend, built with Django and Django Rest Framework (DRF), provides robust processing capabilities, securely hosted on cPanel. Combining cutting-edge technologies, Draam offers accuracy, efficiency, and scalability, making it a reliable solution for digit recognition tasks."
   },
   {
     "id": "5",
@@ -189,6 +196,7 @@
     "includePhoneImages": false,
     "includeVideo": true,
     "videoLink": "https://madjria.com/api/assets/videos/idema/idema.mp4",
+    "includeMobileVideo": false,
     "platforme": "idemaimages/pc-idema.jpg",
     "role": "Mini compiler (website)",
     "describer": "Madjria - Innovative Online Marketplace",

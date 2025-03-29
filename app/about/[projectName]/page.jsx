@@ -74,7 +74,7 @@ const Page = ({ params }) => {
       </div>
       <div
         className={clsx(
-          "w-full flex flex-col gap-3 *:my-5",
+          "w-full flex flex-col gap-3 *:my-5 shrink-0 py-10",
           "px-[25px] sm:px-[65px] md:px-40"
         )}
       >
@@ -98,7 +98,7 @@ const Page = ({ params }) => {
         )}
         <div
           className={clsx(
-            "w-full flex flex-col items-center justify-center gap-[30px] lg:flex-row"
+            "w-full flex flex-col items-start justify-center gap-[30px] lg:flex-row"
           )}
         >
           {Object.entries(project.technologies).map(
@@ -161,10 +161,8 @@ const Page = ({ params }) => {
             </div>
           </div>
         )}
-        <div className="w-full h-fit pb-36">
-          <Describer label={"CONCLUSION"} desc={project.describer} />
-          <p className="text-2xl ">{project.description}</p>
-        </div>
+        <Describer label={"CONCLUSION"} desc={project.describer} />
+        <p className="text-2xl ">{project.description}</p>
       </div>
       <div className="relative flex flex-col items-center justify-center w-screen min-h-screen h-fit bg-text text-background gap-10">
         <DelayedLink

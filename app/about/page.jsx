@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import hero_image from "@/public/images/other/nature-lake.jpg";
+import amirMadjour from "@/public/images/other/MadjourAmir.png"
 import Image from "next/image";
 import clsx from "clsx";
 import Card from "@/components/custom/Card";
@@ -47,8 +48,8 @@ const About = () => {
               applications, your product is in good hands.
             </p>
             <Image
-              className="w-full h-auto lg:max-w-[600px]"
-              src={hero_image}
+              className="w-full h-auto lg:max-w-[500px]"
+              src={amirMadjour}
               width={0}
               height={0}
               style={{ objectFit: "cover" }}
