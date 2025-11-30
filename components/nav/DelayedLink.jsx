@@ -5,7 +5,7 @@ import { useState } from "react";
 import usePageTransition from "@/zustand/pageTransition";
 
 const routes = {
-  "/": "Home",
+  "/": "Hello",
   "/work": "Work",
   "/about": "About",
   "/contact": "Contact",

@@ -1,6 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import hero_image from "@/public/images/other/nature-lake.jpg";
-import amirMadjour from "@/public/images/other/MadjourAmir.png"
+import amirMadjour from "@/public/images/other/MadjourAmir.jpg"
 import Image from "next/image";
 import clsx from "clsx";
 import Card from "@/components/custom/Card";

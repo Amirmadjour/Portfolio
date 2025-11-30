@@ -76,7 +76,7 @@ const Nav = () => {
       </AnimatePresence>
       <nav
         className={clsx(
-          "absolute left-0 top-0 flex items-center justify-between w-screen h-20 m-0 sm:px-10 px-[25px] z-50",
+          "absolute left-0 top-0 flex items-center justify-between w-screen h-20 m-0 sm:px-10 px-[25px] z-[2]",
           "bg-transparent backdrop-blur-sm"
         )}
       >
@@ -157,7 +157,7 @@ const Nav = () => {
                 className={"relative custom_circle"}
                 fn={() => setToggleSideMenu(false)}
               >
-                Home
+                Hello
               </DelayedLink>
               <DelayedLink
                 href="/work"
