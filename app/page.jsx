@@ -30,7 +30,7 @@ const Home = () => {
         text="FULL STACK DEVELOPER · "
         onHover="speedUp"
         spinDuration={20}
-        className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] !absolute left-[calc(50vw-70px)] top-[calc(100vh-200px)] md:top-[calc(100vh-220px)] md:left-[20px]"
+        className="!absolute left-[calc(50vw-70px)] top-[calc(100vh-200px)] md:top-[calc(100vh-220px)] md:left-[20px]"
       />
 
       <div className="flex flex-col -z-10 items-center justify-center w-screen h-screen">
