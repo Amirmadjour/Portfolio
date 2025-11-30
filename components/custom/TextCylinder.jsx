@@ -2,11 +2,12 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 import { useRef, useEffect, useState } from "react";
+import { useScroll, useMotionValueEvent, useMotionValue, useSpring } from "framer-motion";
 
-function ScrollingCylinderText({ text = "HELLO WORLD • " }) {
+function ScrollingCylinderText({ text = "HELLO WORLD • ", scrollVelocity }) {
   const group = useRef();
   const radius = 15;
-  const rotationSpeed = 0.15;
+  const baseRotationSpeed = 0.15;
   const fontSize = 7;
   
   // Split text into individual characters
@@ -15,7 +16,12 @@ function ScrollingCylinderText({ text = "HELLO WORLD • " }) {
 
   useFrame((state, delta) => {
     if (group.current) {
-      group.current.rotation.y -= delta * rotationSpeed; // rotation speed
+      // Get current scroll velocity value
+      const velocity = scrollVelocity ? scrollVelocity.get() : 0;
+      // Calculate rotation speed: base speed + scroll velocity
+      // Negative velocity (scroll up) reverses direction, positive (scroll down) speeds up
+      const rotationSpeed = baseRotationSpeed + velocity;
+      group.current.rotation.y -= delta * rotationSpeed;
     }
   });
 
@@ -49,9 +55,42 @@ function ScrollingCylinderText({ text = "HELLO WORLD • " }) {
 
 export default function TextCylinder({ text = "MADJOUR AMIR" }) {
   const [mounted, setMounted] = useState(false);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useMotionValue(0);
+  const smoothedVelocity = useSpring(scrollVelocity, { 
+    stiffness: 300, 
+    damping: 30 
+  });
+  const lastScrollY = useRef(0);
+  const scrollTimeout = useRef(null);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const delta = latest - lastScrollY.current;
+    
+    // Update scroll velocity (positive = scroll down, negative = scroll up)
+    scrollVelocity.set(delta * 0.1); // Scale the velocity
+    lastScrollY.current = latest;
+
+    // Reset velocity to 0 after scroll stops
+    if (scrollTimeout.current) {
+      clearTimeout(scrollTimeout.current);
+    }
+
+    scrollTimeout.current = setTimeout(() => {
+      scrollVelocity.set(0);
+    }, 150);
+  });
+
+  useEffect(() => {
+    return () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
   }, []);
 
   if (!mounted) {
@@ -69,7 +108,7 @@ export default function TextCylinder({ text = "MADJOUR AMIR" }) {
       <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
         <ambientLight intensity={1.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
-        <ScrollingCylinderText text={text + "•"} />
+        <ScrollingCylinderText text={text + "•"} scrollVelocity={smoothedVelocity} />
       </Canvas>
     </div>
   );
