@@ -42,7 +42,7 @@ const Nav = () => {
         {(doesNavBtnAppear || toggleSideMenu) && (
           <div
             className={clsx(
-              "fixed flex top-0 right-0 items-center justify-center w-20 z-[2] aspect-square mr-[13px]"
+              "fixed flex top-0 right-0 items-center justify-center w-20 z-50 aspect-square mr-[13px]"
             )}
           >
             <motion.button
@@ -76,7 +76,7 @@ const Nav = () => {
       </AnimatePresence>
       <nav
         className={clsx(
-          "absolute left-0 top-0 flex items-center justify-between w-screen h-20 m-0 sm:px-10 px-[25px]",
+          "absolute left-0 top-0 flex items-center justify-between w-screen h-20 m-0 sm:px-10 px-[25px] z-50",
           "bg-transparent backdrop-blur-sm"
         )}
       >

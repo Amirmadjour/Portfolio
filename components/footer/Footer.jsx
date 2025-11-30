@@ -4,6 +4,7 @@ import a1 from "@/public/images/other/cat.jpg";
 import DelayedLink from "../nav/DelayedLink";
 import { useState } from "react";
 import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
 
 import "@/styles/utils.css";
 import Socials from "./Socials";
@@ -16,7 +17,7 @@ const Footer = () => {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      100 % setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
@@ -28,7 +29,7 @@ const Footer = () => {
       copied: copiedEmail,
       setCopied: setCopiedEmail,
     },
-    { text: "0556326897", copied: copiedPhone, setCopied: setCopiedPhone },
+    { text: "+33 605637460", copied: copiedPhone, setCopied: setCopiedPhone },
   ];
 
   return (
@@ -54,10 +55,21 @@ const Footer = () => {
                 onClick={() => handleCopy({ text, setCopied })}
                 className={clsx(
                   "button border-background_light w-full md:border-none md:w-fit ",
-                  "py-3"
+                  "py-3 relative overflow-hidden"
                 )}
               >
-                {copied ? "copied" : text}
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={copied ? "copied" : text}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="inline-block"
+                  >
+                    {copied ? "copied" : text}
+                  </motion.span>
+                </AnimatePresence>
               </button>
             ))}
           </div>

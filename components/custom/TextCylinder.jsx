@@ -3,23 +3,21 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 import { useRef, useEffect, useState } from "react";
 import { useScroll, useMotionValueEvent, useMotionValue, useSpring } from "framer-motion";
+import { useViewport } from "@/hooks/useViewport";
 
-function ScrollingCylinderText({ text = "HELLO WORLD • ", scrollVelocity }) {
+function ScrollingCylinderText({ text = "HELLO WORLD", scrollVelocity }) {
   const group = useRef();
-  const radius = 15;
+  const { width } = useViewport();
+  const radius = width > 768 ? 15 : 0.15;
   const baseRotationSpeed = 0.15;
-  const fontSize = 7;
+  const fontSize = width > 768 ? 2.9 : 0.01;
   
-  // Split text into individual characters
   const characters = Array.from(text);
   const totalChars = characters.length;
 
   useFrame((state, delta) => {
     if (group.current) {
-      // Get current scroll velocity value
       const velocity = scrollVelocity ? scrollVelocity.get() : 0;
-      // Calculate rotation speed: base speed + scroll velocity
-      // Negative velocity (scroll up) reverses direction, positive (scroll down) speeds up
       const rotationSpeed = baseRotationSpeed + velocity;
       group.current.rotation.y -= delta * rotationSpeed;
     }
@@ -28,7 +26,6 @@ function ScrollingCylinderText({ text = "HELLO WORLD • ", scrollVelocity }) {
   return (
     <group ref={group}>
       {characters.map((char, i) => {
-        // Calculate angle for each character to wrap around the cylinder
         const angle = (i / totalChars) * Math.PI * 2;
         const x = Math.cos(angle) * radius;
         const z = Math.sin(angle) * radius;
@@ -53,16 +50,18 @@ function ScrollingCylinderText({ text = "HELLO WORLD • ", scrollVelocity }) {
   );
 }
 
-export default function TextCylinder({ text = "MADJOUR AMIR" }) {
+export default function TextCylinder({ text = "MVP · WEB & APP DEVELOPMENT · FULL STACK DEVELOPER · " }) {
   const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
   const scrollVelocity = useMotionValue(0);
   const smoothedVelocity = useSpring(scrollVelocity, { 
-    stiffness: 300, 
-    damping: 30 
+    stiffness: 100, 
+    damping: 10 
   });
   const lastScrollY = useRef(0);
   const scrollTimeout = useRef(null);
+  const { width } = useViewport();
+  const position = width > 768 ? [0, 0, 15] : [0, 0, 0];
 
   useEffect(() => {
     setMounted(true);
@@ -71,11 +70,9 @@ export default function TextCylinder({ text = "MADJOUR AMIR" }) {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const delta = latest - lastScrollY.current;
     
-    // Update scroll velocity (positive = scroll down, negative = scroll up)
-    scrollVelocity.set(delta * 0.1); // Scale the velocity
+    scrollVelocity.set(delta * 0.1);
     lastScrollY.current = latest;
 
-    // Reset velocity to 0 after scroll stops
     if (scrollTimeout.current) {
       clearTimeout(scrollTimeout.current);
     }
@@ -105,10 +102,10 @@ export default function TextCylinder({ text = "MADJOUR AMIR" }) {
 
   return (
     <div className="w-full h-[400px]">
-      <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
+      <Canvas camera={{ position, fov: 50 }}>
         <ambientLight intensity={1.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
-        <ScrollingCylinderText text={text + "•"} scrollVelocity={smoothedVelocity} />
+        <ScrollingCylinderText text={text} scrollVelocity={smoothedVelocity} />
       </Canvas>
     </div>
   );
